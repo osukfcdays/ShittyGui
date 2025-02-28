@@ -35,7 +35,7 @@ local LagServer = Instance.new("TextButton")
 local UICorner_10 = Instance.new("UICorner")
 local AntiInfect = Instance.new("TextButton")
 local UICorner_11 = Instance.new("UICorner")
-local AutoCure = Instance.new("TextButton")
+--local AutoCure = Instance.new("TextButton") -- havent finished this yet, its really easy but im lazy asf.
 local UICorner_12 = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 local UIStroke_2 = Instance.new("UIStroke")
@@ -605,7 +605,7 @@ end)
 
 UICorner_11.Parent = AntiInfect
 
-UIStroke_14.Parent = AutoCure
+--[[UIStroke_14.Parent = AutoCure
 UIStroke_14.ApplyStrokeMode = "Border"
 UIStroke_14.Color = Color3.fromRGB(115, 115, 115)
 AutoCure.Name = "AutoCure"
@@ -624,7 +624,7 @@ AutoCure.MouseButton1Down:connect(function()
 
 end)
 
-UICorner_12.Parent = AutoCure
+UICorner_12.Parent = AutoCure]]
 
 local main = Main
 local Opened = true
