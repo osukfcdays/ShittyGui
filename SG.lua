@@ -477,6 +477,7 @@ FunStuff.BorderColor3 = Color3.fromRGB(0, 0, 0)
 FunStuff.BorderSizePixel = 0
 FunStuff.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
 FunStuff.Size = UDim2.new(0, 490, 0, 330)
+FunStuff.Visible = false
 
 UIStroke_10.Parent = GodGun 
 UIStroke_10.ApplyStrokeMode = "Border"
