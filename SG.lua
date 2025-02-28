@@ -462,70 +462,10 @@ WalkspeedBypass.Text = "WS Bypass"
 WalkspeedBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
 WalkspeedBypass.TextSize = 15.000
 WalkspeedBypass.MouseButton1Down:connect(function()
-game.Players.LocalPlayer.Character.States:Destroy()
-
-local States = Instance.new("LocalScript")
-States.Source = [[
-    local v_u_1 = game.Players.LocalPlayer
-    local v_u_2 = v_u_1.Character
-    local v_u_3 = v_u_2:FindFirstChildOfClass("Humanoid")
-    local v_u_4 = false
-    game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
-    local function v_u_6()
-
-        game.ReplicatedStorage.Remotes.StopAnimations:FireServer()
-        for _, v5 in pairs(v_u_1.Character.Humanoid:GetPlayingAnimationTracks()) do
-            v5:Stop()
-        end
-    end
-    v_u_3.Died:Connect(function()
-
-        v_u_4 = true
-        game:GetService("StarterGui"):SetCoreGuiEnabled("Backpack", false)
-        v_u_3:UnequipTools()
-        v_u_6()
-    end)
-    v_u_3:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-
-        if v_u_3.WalkSpeed > 9e9 then
-            v_u_3.WalkSpeed = 16
-        end
-    end)
-    v_u_2:WaitForChild("RagdollTick"):GetPropertyChangedSignal("Value"):Connect(function()
-
-        if v_u_2.RagdollTick.Value > 0 then
-            game:GetService("StarterGui"):SetCoreGuiEnabled("Backpack", false)
-            v_u_3:UnequipTools()
-            v_u_6()
-        else
-         game:GetService("StarterGui"):SetCoreGuiEnabled("Backpack", true)
-        end
-    end)
-    game.ReplicatedStorage.Remotes.StopAnimations.OnClientEvent:Connect(function()
-
-        v_u_6()
-    end)
-    game.ReplicatedStorage.Remotes.SpeedChanged.OnClientEvent:Connect(function(p7, p8)
-
-        if p8 then
-            v_u_3.WalkSpeed = p7
-       end
-    end)
-    v_u_3:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
-
-    game.ReplicatedStorage.Remotes.SpeedChanged:FireServer(v_u_3.WalkSpeed)
-end)]]
-States.Parent = game.Players.LocalPlayer.Character
-States.Name = "States"
-
-local WSC
-WSC = hookmetamethod(game, "__namecall", function(self, ...)
-local retards = {...}
-if tostring(self) == "SpeedChanged" then
-return nil
+for _, connection in getconnections(game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
+    print(_, connection)
+    connection:Disable()
 end
-return WSC(self, unpack(retards))
-end)
 end)
 
 UICorner_7.Parent = WalkspeedBypass
