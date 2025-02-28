@@ -463,7 +463,6 @@ WalkspeedBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
 WalkspeedBypass.TextSize = 15.000
 WalkspeedBypass.MouseButton1Down:connect(function()
 for _, connection in getconnections(game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
-    print(_, connection)
     connection:Disable()
 end
 end)
