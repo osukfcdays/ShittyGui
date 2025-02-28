@@ -499,7 +499,7 @@ GodGun.MouseButton1Down:connect(function()
 	function ModsRapeHim(v)
 		if v:FindFirstChild("Setting") then
 			local NegaWatt = require(v.Setting)
-			NegaWatt.FireRate = 0.1
+			NegaWatt.FireRate = 0.03
 			NegaWatt.Auto = true
 			NegaWatt.AmmoPerClip = 9e9
 			NegaWatt.ReloadTime = 0
