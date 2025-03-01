@@ -276,52 +276,7 @@ GiveCurePass.Text = "Cure Pass"
 GiveCurePass.TextColor3 = Color3.fromRGB(255, 255, 255)
 GiveCurePass.TextSize = 15.000
 GiveCurePass.MouseButton1Down:connect(function()
-    wait(1)
-    local var10 = game:GetService("TweenService")
-    local var3 = game.ReplicatedStorage:WaitForChild("LocalFolder").GamepassCureMachine
-    local var2 = game:GetService("MarketplaceService")
-    local var1 = game.Players.LocalPlayer
-    var3.Parent = workspace
-    local var12 = var3.Tube
-    local var11 = var3.Cure
-    var2.PromptGamePassPurchaseFinished:Connect(function(arg1, arg2, arg3)
-    	var3.Parent = workspace
-    end)
-    local var8 = var4.Size
-    local var9 = var4.Position
-    local var7 = var3.Button
-    local var6 = false
-    local var5 = false
-    local var4 = var3.FakeCure
-    var7.ProximityPrompt.Triggered:Connect(function()
-    	var5 = true
-    	var7.ProximityPrompt.MaxActivationDistance = 0
-    	var4.Size = var8
-    	var4.Position = var9
-	    var4.Transparency = 0
-	    var10:Create(var4, TweenInfo.new(180, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-		    Size = var11.Size;
-	    	Position = var11.Position;
-	    }):Play()
-    	wait(180)
-    	var11.Done:Play()
-	    wait(0.3)
-	    var11.Transparency = 0
-	    var4.Transparency = 1
-	    var12.ProximityPrompt.MaxActivationDistance = 6
-	    var6 = true
-	    var5 = false
-    end)
-    var12.ProximityPrompt.Triggered:Connect(function()
-	    local var16 = nil
-	    var6 = false
-	    var11.Transparency = 1
-	    var12.ProximityPrompt.MaxActivationDistance = 0
-	    var7.ProximityPrompt.MaxActivationDistance = 4
-	    game.ReplicatedStorage.Events.GiveCure:FireServer(var1)
-	    return
-	    game.ReplicatedStorage.Events.MessageClient:FireServer("You can have only two cures.")
-    end)
+    game.ReplicatedStorage:WaitForChild("LocalFolder").GamepassCureMachine.Parent = workspace
 end)
 
 UICorner_3.Parent = GiveCurePass
@@ -342,52 +297,7 @@ GiveVirusPass.Text = "Virus Pass"
 GiveVirusPass.TextColor3 = Color3.fromRGB(255, 255, 255)
 GiveVirusPass.TextSize = 15.000
 GiveVirusPass.MouseButton1Down:connect(function()
-    wait(1)
-    local var10 = game:GetService("TweenService")
-    local var3 = game.ReplicatedStorage:WaitForChild("LocalFolder").GamepassVirusMachine
-    local var2 = game:GetService("MarketplaceService")
-    local var1 = game.Players.LocalPlayer
-    var3.Parent = workspace
-    local var12 = var3.Tube
-    local var11 = var3.Cure
-    var2.PromptGamePassPurchaseFinished:Connect(function(arg1, arg2, arg3)
-        var3.Parent = workspace
-    end)
-    local var8 = var4.Size
-    local var9 = var4.Position
-    local var7 = var3.Button
-    local var6 = false
-    local var5 = false
-    local var4 = var3.FakeCure
-    var7.ProximityPrompt.Triggered:Connect(function()
-        var5 = true
-        var7.ProximityPrompt.MaxActivationDistance = 0
-        var4.Size = var8
-        var4.Position = var9
-        var4.Transparency = 0
-        var10:Create(var4, TweenInfo.new(180, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-            Position = var11.Position;
-            Size = var11.Size;
-        }):Play()
-        wait(180)
-        var11.Done:Play()
-        wait(0.3)
-        var11.Transparency = 0
-        var4.Transparency = 1
-        var12.ProximityPrompt.MaxActivationDistance = 6
-        var6 = true
-        var5 = false
-    end)
-    var12.ProximityPrompt.Triggered:Connect(function()
-        local var16 = nil
-        var6 = false
-        var11.Transparency = 1
-        var12.ProximityPrompt.MaxActivationDistance = 0
-        var7.ProximityPrompt.MaxActivationDistance = 4
-        game.ReplicatedStorage.Events.GiveVirus:FireServer(var1)
-        return
-        game.ReplicatedStorage.Events.MessageClient:FireServer("You can have only one virus.")
-    end)   
+    game.ReplicatedStorage:WaitForChild("LocalFolder").GamepassVirusMachine.Parent = workspace
 end)
 
 UICorner_4.Parent = GiveVirusPass
