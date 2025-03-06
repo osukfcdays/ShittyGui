@@ -4,21 +4,36 @@ end
 
 if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     local UserInputService = game:GetService("UserInputService")
-    local SG = Instance.new("ScreenGui")
+    local ESG = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local Title = Instance.new("TextLabel")
     local CloseGui = Instance.new("TextButton")
     local ListBox = Instance.new("Frame")
     local TeamsButton = Instance.new("TextButton")
+    local BypassesButton = Instance.new("TextButton")
     local FunStuffButton = Instance.new("TextButton")
+    local TeleportsButton = Instance.new("TextButton")
     local GuiSections = Instance.new("Frame")
     local Teams = Instance.new("Frame")
     local BecomeScientist = Instance.new("TextButton")
     local UICorner = Instance.new("UICorner")
     local BecomeZombie = Instance.new("TextButton")
     local UICorner_2 = Instance.new("UICorner")
+    local Bypasses = Instance.new("Frame")
+    local BypassAntiCheat = Instance.new("TextButton")
+    local UICorner_3 = Instance.new("UICorner")
     local FunStuff = Instance.new("Frame")
     local GodGun = Instance.new("TextButton")
+    local UICorner_4 = Instance.new("UICorner")
+    local InfectAll = Instance.new("TextButton")
+    local UICorner_5 = Instance.new("UICorner")
+    local Teleports = Instance.new("Frame")
+    local Outside = Instance.new("TextButton")
+    local UICorner_6 = Instance.new("UICorner")
+    local ScientistSpawn = Instance.new("TextButton")
+    local UICorner_7 = Instance.new("UICorner")
+    local BreakerBox = Instance.new("TextButton")
+    local UICorner_8 = Instance.new("UICorner")
     local UICorner_3 = Instance.new("UICorner")
     local InfectAll = Instance.new("TextButton")
     local UICorner_4 = Instance.new("UICorner")
@@ -28,14 +43,18 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     local UIStroke_4 = Instance.new("UIStroke")
     local UIStroke_5 = Instance.new("UIStroke")
     local UIStroke_6 = Instance.new("UIStroke")
+    local UIStroke_7 = Instance.new("UIStroke")
+    local UIStroke_8 = Instance.new("UIStroke")
+    local UIStroke_9 = Instance.new("UIStroke")
+    local UIStroke_10 = Instance.new("UIStroke")
     
-    SG.Name = "SG"
-    SG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-    SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    SG.ResetOnSpawn = false
+    ESG.Name = "ESG"
+    ESG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    ESG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ESG.ResetOnSpawn = false
     
     Main.Name = "Main"
-    Main.Parent = SG
+    Main.Parent = ESG
     Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
     Main.BackgroundTransparency = 0.100
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -71,7 +90,7 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     CloseGui.TextColor3 = Color3.fromRGB(255, 255, 255)
     CloseGui.TextSize = 20.000
     CloseGui.MouseButton1Down:connect(function()
-    	game.Players.LocalPlayer.PlayerGui.SG:Destroy()
+        game.Players.LocalPlayer.PlayerGui.ESG:Destroy()
     end)
     
     UIStroke.Parent = ListBox 
@@ -99,8 +118,29 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     TeamsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     TeamsButton.TextSize = 15.000
     TeamsButton.MouseButton1Down:connect(function()
-    	Teams.Visible = true
-    	FunStuff.Visible = false
+        Teams.Visible = true
+        FunStuff.Visible = false
+        Teleports.Visible = false
+        Bypasses.Visible = false
+    end)
+    
+    BypassesButton.Name = "BypassesButton"
+    BypassesButton.Parent = ListBox
+    BypassesButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+    BypassesButton.BackgroundTransparency = 0.700
+    BypassesButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BypassesButton.BorderSizePixel = 0
+    BypassesButton.Position = UDim2.new(0, 0, 0.159638554, 0)
+    BypassesButton.Size = UDim2.new(0, 109, 0, 35)
+    BypassesButton.Font = Enum.Font.SourceSans
+    BypassesButton.Text = "Bypasses"
+    BypassesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    BypassesButton.TextSize = 15.000
+    BypassesButton.MouseButton1Down:connect(function()
+        Teams.Visible = false
+        FunStuff.Visible = false
+        Teleports.Visible = false
+        Bypasses.Visible = true
     end)
     
     FunStuffButton.Name = "FunStuffButton"
@@ -109,15 +149,36 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     FunStuffButton.BackgroundTransparency = 0.700
     FunStuffButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
     FunStuffButton.BorderSizePixel = 0
-    FunStuffButton.Position = UDim2.new(0, 0, 0.159638554, 0)
+    FunStuffButton.Position = UDim2.new(0, 0, 0.289156616, 0)
     FunStuffButton.Size = UDim2.new(0, 109, 0, 35)
     FunStuffButton.Font = Enum.Font.SourceSans
     FunStuffButton.Text = "Fun Stuff"
     FunStuffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     FunStuffButton.TextSize = 15.000
     FunStuffButton.MouseButton1Down:connect(function()
-    	Teams.Visible = false
-    	FunStuff.Visible = true
+        Teams.Visible = false
+        FunStuff.Visible = true
+        Teleports.Visible = false
+        Bypasses.Visible = false
+    end)
+    
+    TeleportsButton.Name = "TeleportsButton"
+    TeleportsButton.Parent = ListBox
+    TeleportsButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+    TeleportsButton.BackgroundTransparency = 0.700
+    TeleportsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TeleportsButton.BorderSizePixel = 0
+    TeleportsButton.Position = UDim2.new(0, 0, 0.418674707, 0)
+    TeleportsButton.Size = UDim2.new(0, 109, 0, 35)
+    TeleportsButton.Font = Enum.Font.SourceSans
+    TeleportsButton.Text = "Teleports"
+    TeleportsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TeleportsButton.TextSize = 15.000
+    TeleportsButton.MouseButton1Down:connect(function()
+        Teams.Visible = false
+        FunStuff.Visible = false
+        Teleports.Visible = true
+        Bypasses.Visible = false
     end)
     
     UIStroke_2.Parent = GuiSections 
@@ -158,12 +219,11 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     BecomeScientist.TextColor3 = Color3.fromRGB(255, 255, 255)
     BecomeScientist.TextSize = 15.000
     BecomeScientist.MouseButton1Down:connect(function()
-    	local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-    	HRP.CFrame = game.workspace.Outside.Escape.Respawn.CFrame
-    	task.wait(0.25)
-    	game:GetService("Workspace").Outside.Escape.Respawn.ProximityPrompt.RequiresLineOfSight = false
-    	game:GetService("Workspace").Outside.Escape.Respawn.ProximityPrompt:InputHoldBegin()
-    	game:GetService("Workspace").Outside.Escape.Respawn.ProximityPrompt:InputHoldEnd()
+        local PP = game.workspace.Outside.Escape.Respawn.ProximityPrompt
+        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HRP.CFrame = game.workspace.Outside.Escape.EscapePod:GetChildren()[2].Model.Part.CFrame
+        task.wait(0.25)
+        fireproximityprompt(PP)
     end)
     
     UICorner.Parent = BecomeScientist
@@ -190,6 +250,53 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     
     UICorner_2.Parent = BecomeZombie
     
+    Bypasses.Name = "Bypasses"
+    Bypasses.Parent = GuiSections
+    Bypasses.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Bypasses.BackgroundTransparency = 1.000
+    Bypasses.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Bypasses.BorderSizePixel = 0
+    Bypasses.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
+    Bypasses.Size = UDim2.new(0, 490, 0, 330)
+    Bypasses.Visible = false
+    
+    UIStroke_5.Parent = BypassAntiCheat 
+    UIStroke_5.ApplyStrokeMode = "Border"
+    UIStroke_5.Color = Color3.fromRGB(115, 115, 115)
+    BypassAntiCheat.Name = "BypassAntiCheat"
+    BypassAntiCheat.Parent = Bypasses
+    BypassAntiCheat.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    BypassAntiCheat.BackgroundTransparency = 0.700
+    BypassAntiCheat.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BypassAntiCheat.BorderSizePixel = 0
+    BypassAntiCheat.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
+    BypassAntiCheat.Size = UDim2.new(0, 70, 0, 36)
+    BypassAntiCheat.Font = Enum.Font.SourceSans
+    BypassAntiCheat.Text = "Bypass AC"
+    BypassAntiCheat.TextColor3 = Color3.fromRGB(255, 255, 255)
+    BypassAntiCheat.TextSize = 15.000
+    BypassAntiCheat.MouseButton1Down:connect(function()
+        local Damage = game:GetService("ReplicatedStorage").AC.Damage
+        local ObtainTool = game:GetService("ReplicatedStorage").AC.ObtainTool
+        local BrickObtainTool;
+    
+        BrickObtainTool = hookmetamethod(game, "__namecall", function(self, ...)
+            local GetNameCall = getnamecallmethod()
+            if self == ObtainTool and GetNameCall == "FireServer" then return nil end
+        return BrickObtainTool(self, ...)
+        end)
+    
+        local BrickDamage;
+    
+        BrickDamage = hookmetamethod(game, "__namecall", function(self, ...)
+            local GetNameCall = getnamecallmethod()
+            if self == BrickDamage and GetNameCall == "FireServer" then return nil end
+        return BrickDamage(self, ...)
+        end)
+    end)
+    
+    UICorner_3.Parent = BypassAntiCheat
+    
     FunStuff.Name = "FunStuff"
     FunStuff.Parent = GuiSections
     FunStuff.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -200,9 +307,9 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     FunStuff.Size = UDim2.new(0, 490, 0, 330)
     FunStuff.Visible = false
     
-    UIStroke_5.Parent = GodGun 
-    UIStroke_5.ApplyStrokeMode = "Border"
-    UIStroke_5.Color = Color3.fromRGB(115, 115, 115)
+    UIStroke_6.Parent = GodGun 
+    UIStroke_6.ApplyStrokeMode = "Border"
+    UIStroke_6.Color = Color3.fromRGB(115, 115, 115)
     GodGun.Name = "GodGun"
     GodGun.Parent = FunStuff
     GodGun.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
@@ -216,40 +323,40 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     GodGun.TextColor3 = Color3.fromRGB(255, 255, 255)
     GodGun.TextSize = 15.000
     GodGun.MouseButton1Down:connect(function()
-    	local FindSetting = game:GetService("Players").LocalPlayer.Backpack
+        local FindSetting = game:GetService("Players").LocalPlayer.Backpack
     
-    	function RequireSetting(RS)
-    		if RS:FindFirstChild("Setting") then
-    			local Modify = require(RS.Setting)
-    			Modify.FireRate = 0.03
-    			Modify.Auto = true
-    			Modify.AmmoPerClip = math.huge
-    			Modify.ReloadTime = 0
-    			Modify.BaseDamage = 999
-    			Modify.HeadshotDamageMultiplier = 999
-    			Modify.Spread = 0
-    			Modify.CameraShakingEnabled = false
-    			Modify.BulletSpeed = 9e9
-    			Modify.Clips = math.huge
-    			Modify.MaxClip = math.huge
-    			Modify.Lifesteal = 100
+        function RequireSetting(RS)
+            if RS:FindFirstChild("Setting") then
+                local Modify = require(RS.Setting)
+                Modify.FireRate = 0.03
+                Modify.Auto = true
+                Modify.AmmoPerClip = math.huge
+                Modify.ReloadTime = 0
+                Modify.BaseDamage = 999
+                Modify.HeadshotDamageMultiplier = 999
+                Modify.Spread = 0
+                Modify.CameraShakingEnabled = false
+                Modify.BulletSpeed = 9e9
+                Modify.Clips = math.huge
+                Modify.MaxClip = math.huge
+                Modify.Lifesteal = 100
     
-    		end
-    	end
+            end
+        end
     
-    	for _, RS in next, FindSetting:GetChildren() do
-    		RequireSetting(RS)
-    	end
-    	FindSetting.ChildAdded:Connect(function(RS)
-    		RequireSetting(RS)
-    	end)
+        for _, RS in next, FindSetting:GetChildren() do
+            RequireSetting(RS)
+        end
+        FindSetting.ChildAdded:Connect(function(RS)
+            RequireSetting(RS)
+        end)
     end)
     
-    UICorner_3.Parent = GodGun
+    UICorner_4.Parent = GodGun
     
-    UIStroke_6.Parent = InfectAll 
-    UIStroke_6.ApplyStrokeMode = "Border"
-    UIStroke_6.Color = Color3.fromRGB(115, 115, 115)
+    UIStroke_7.Parent = InfectAll 
+    UIStroke_7.ApplyStrokeMode = "Border"
+    UIStroke_7.Color = Color3.fromRGB(115, 115, 115)
     InfectAll.Name = "InfectAll"
     InfectAll.Parent = FunStuff
     InfectAll.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
@@ -259,34 +366,90 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     InfectAll.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
     InfectAll.Size = UDim2.new(0, 70, 0, 36)
     InfectAll.Font = Enum.Font.SourceSans
-    InfectAll.Text = "Infect all"
+    InfectAll.Text = "Infect All"
     InfectAll.TextColor3 = Color3.fromRGB(255, 255, 255)
     InfectAll.TextSize = 15.000
     InfectAll.MouseButton1Down:connect(function()
-    	local Backpack = game.Players.LocalPlayer.Backpack
-    
-    		function FindInfect(FI)
-    			if FI:FindFirstChild(Backpack.Infect) then
-    			local lplr = game.Players.LocalPlayer
-    			for _, v in game.Players:GetPlayers() do
-    				if lplr ~= v and v.Character and v.Team ~= lplr.Team and v.Character.PrimaryPart then
-    				firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 0)
-    				firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 1)
-    				end
-    			end
-    		end
-    	end
-    
-    	for _, FI in next, Backpack:GetChildren() do
-    		FindInfect(FI)
-    	end
-    
-    	Backpack.ChildAdded:connect(function(FI)
-    		FindInfect(FI)
-    	end)
+    print("not finished")
     end)
     
-    UICorner_4.Parent = InfectAll
+    UICorner_5.Parent = InfectAll
+    
+    Teleports.Name = "Teleports"
+    Teleports.Parent = GuiSections
+    Teleports.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Teleports.BackgroundTransparency = 1.000
+    Teleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Teleports.BorderSizePixel = 0
+    Teleports.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
+    Teleports.Size = UDim2.new(0, 490, 0, 330)
+    Teleports.Visible = false
+    
+    UIStroke_8.Parent = Outside 
+    UIStroke_8.ApplyStrokeMode = "Border"
+    UIStroke_8.Color = Color3.fromRGB(115, 115, 115)
+    Outside.Name = "Outside"
+    Outside.Parent = Teleports
+    Outside.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    Outside.BackgroundTransparency = 0.500
+    Outside.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Outside.BorderSizePixel = 0
+    Outside.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
+    Outside.Size = UDim2.new(0, 70, 0, 36)
+    Outside.Font = Enum.Font.SourceSans
+    Outside.Text = "Outside"
+    Outside.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Outside.TextSize = 15.000
+    Outside.MouseButton1Down:connect(function()
+        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HRP.CFrame = game.workspace.Outside.Exit:GetChildren()[11].CFrame
+    end)
+    
+    UICorner_6.Parent = Outside
+    
+    UIStroke_9.Parent = ScientistSpawn 
+    UIStroke_9.ApplyStrokeMode = "Border"
+    UIStroke_9.Color = Color3.fromRGB(115, 115, 115)
+    ScientistSpawn.Name = "ScientistSpawn"
+    ScientistSpawn.Parent = Teleports
+    ScientistSpawn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    ScientistSpawn.BackgroundTransparency = 0.500
+    ScientistSpawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ScientistSpawn.BorderSizePixel = 0
+    ScientistSpawn.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
+    ScientistSpawn.Size = UDim2.new(0, 70, 0, 36)
+    ScientistSpawn.Font = Enum.Font.SourceSans
+    ScientistSpawn.Text = "Spawn"
+    ScientistSpawn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    ScientistSpawn.TextSize = 15.000
+    ScientistSpawn.MouseButton1Down:connect(function()
+        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HRP.CFrame = game.workspace.Scientist.CFrame
+    end)
+    
+    UICorner_7.Parent = ScientistSpawn
+    
+    UIStroke_10.Parent = BreakerBox 
+    UIStroke_10.ApplyStrokeMode = "Border"
+    UIStroke_10.Color = Color3.fromRGB(115, 115, 115)
+    BreakerBox.Name = "BreakerBox"
+    BreakerBox.Parent = Teleports
+    BreakerBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+    BreakerBox.BackgroundTransparency = 0.500
+    BreakerBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BreakerBox.BorderSizePixel = 0
+    BreakerBox.Position = UDim2.new(0.351020396, 0, 0.0484848469, 0)
+    BreakerBox.Size = UDim2.new(0, 70, 0, 36)
+    BreakerBox.Font = Enum.Font.SourceSans
+    BreakerBox.Text = "BreakerBox"
+    BreakerBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    BreakerBox.TextSize = 15.000
+    BreakerBox.MouseButton1Down:connect(function()
+        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HRP.CFrame = game.workspace.Map.Electrical.PowerModule.PowerModule.CFrame
+    end)
+    
+    UICorner_8.Parent = BreakerBox
     
     local main = Main
     local Opened = true
@@ -294,14 +457,14 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     local PositionClosed = UDim2.new(0.338, 0,1, 30)
     local PositionOpened = UDim2.new(0.338, 0,0.285, 0)
     UserInputService.InputBegan:connect(function(key, chat)
-    	if not chat and key.KeyCode == Enum.KeyCode.K then
-    		if Opened then
-    			main:TweenPosition((PositionClosed), "InOut", "Quart")
-    		else
-    			main:TweenPosition((PositionOpened), "InOut", "Quart")
-    		end
-    		Opened = not Opened
-    	end
+        if not chat and key.KeyCode == Enum.KeyCode.K then
+            if Opened then
+                main:TweenPosition((PositionClosed), "InOut", "Quart")
+            else
+                main:TweenPosition((PositionOpened), "InOut", "Quart")
+            end
+            Opened = not Opened
+        end
     end)
 else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     local UserInputService = game:GetService("UserInputService")
