@@ -1016,7 +1016,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     UICorner_24.Parent = CureRandom
     
-    InfectRandom.Name = "InfectRandom"
+    InfectRandom.Name = "Infect Random"
     InfectRandom.Parent = RandomShit
     InfectRandom.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     InfectRandom.BorderColor3 = Color3.fromRGB(0, 0, 0)
