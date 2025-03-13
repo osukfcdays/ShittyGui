@@ -990,7 +990,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     UICorner_23.Parent = UnRagdoll
     
-    CureRandom.Name = "Cure Random"
+    CureRandom.Name = "CureRandom"
     CureRandom.Parent = RandomShit
     CureRandom.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     CureRandom.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -998,7 +998,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     CureRandom.Position = UDim2.new(0.001, 5,0.21, 3)
     CureRandom.Size = UDim2.new(0, 475, 0, 28)
     CureRandom.Font = Enum.Font.SourceSans
-    CureRandom.Text = "CureRandom"
+    CureRandom.Text = "Cure Random"
     CureRandom.TextColor3 = Color3.fromRGB(255, 255, 255)
     CureRandom.TextSize = 15.000
     CureRandom.MouseButton1Down:connect(function()
