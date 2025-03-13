@@ -3,50 +3,60 @@ if not game.Loaded then
 end
 
 if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
+    if getgenv().ESG then
+        getgenv().ESG:Destroy()
+        getgenv().ESG = nil 
+    end
+    
     local UserInputService = game:GetService("UserInputService")
     local ESG = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
-    local Title = Instance.new("TextLabel")
-    local CloseGui = Instance.new("TextButton")
-    local ListBox = Instance.new("Frame")
-    local TeamsButton = Instance.new("TextButton")
-    local BypassesButton = Instance.new("TextButton")
-    local FunStuffButton = Instance.new("TextButton")
-    local TeleportsButton = Instance.new("TextButton")
-    local GuiSections = Instance.new("Frame")
-    local Teams = Instance.new("Frame")
-    local BecomeScientist = Instance.new("TextButton")
+    local Name = Instance.new("TextLabel")
     local UICorner = Instance.new("UICorner")
-    local BecomeZombie = Instance.new("TextButton")
+    local GuiSections = Instance.new("Frame")
     local UICorner_2 = Instance.new("UICorner")
-    local Bypasses = Instance.new("Frame")
-    local BypassAntiCheat = Instance.new("TextButton")
+    local Teams = Instance.new("Frame")
     local UICorner_3 = Instance.new("UICorner")
-    local FunStuff = Instance.new("Frame")
-    local GodGun = Instance.new("TextButton")
+    local BecomeScientist = Instance.new("TextButton")
     local UICorner_4 = Instance.new("UICorner")
-    local InfectAll = Instance.new("TextButton")
+    local BecomeZombie = Instance.new("TextButton")
     local UICorner_5 = Instance.new("UICorner")
-    local Teleports = Instance.new("Frame")
-    local Outside = Instance.new("TextButton")
+    local Bypasses = Instance.new("Frame")
     local UICorner_6 = Instance.new("UICorner")
-    local ScientistSpawn = Instance.new("TextButton")
+    local AntiCheatBypass = Instance.new("TextButton")
     local UICorner_7 = Instance.new("UICorner")
-    local BreakerBox = Instance.new("TextButton")
+    local FunStuff = Instance.new("Frame")
     local UICorner_8 = Instance.new("UICorner")
-    local UICorner_3 = Instance.new("UICorner")
-    local InfectAll = Instance.new("TextButton")
-    local UICorner_4 = Instance.new("UICorner")
+    local GodGun = Instance.new("TextButton")
+    local UICorner_9 = Instance.new("UICorner")
+    local NotFinishedIA = Instance.new("TextButton")
+    local UICorner_10 = Instance.new("UICorner")
+    local Teleports = Instance.new("Frame")
+    local UICorner_11 = Instance.new("UICorner")
+    local ScientistSpawn = Instance.new("TextButton")
+    local UICorner_12 = Instance.new("UICorner")
+    local ZombieSpawn = Instance.new("TextButton")
+    local UICorner_13 = Instance.new("UICorner")
+    local OutSide = Instance.new("TextButton")
+    local UICorner_14 = Instance.new("UICorner")
+    local BreakerBox = Instance.new("TextButton")
+    local UICorner_15 = Instance.new("UICorner")
+    local ListBox = Instance.new("Frame")
+    local UICorner_16 = Instance.new("UICorner")
+    local BypassesButton = Instance.new("TextButton")
+    local UICorner_17 = Instance.new("UICorner")
+    local TeleportsButton = Instance.new("TextButton")
+    local UICorner_18 = Instance.new("UICorner")
+    local TeamsButton = Instance.new("TextButton")
+    local UICorner_19 = Instance.new("UICorner")
+    local FunStuffButton = Instance.new("TextButton")
+    local UICorner_20 = Instance.new("UICorner")
+    local RemoveGui = Instance.new("TextButton")
+    local UICorner_21 = Instance.new("UICorner")
+    local ignore = Instance.new("TextLabel")
+    local UICorner_22 = Instance.new("UICorner")
     local UIStroke = Instance.new("UIStroke")
     local UIStroke_2 = Instance.new("UIStroke")
-    local UIStroke_3 = Instance.new("UIStroke")
-    local UIStroke_4 = Instance.new("UIStroke")
-    local UIStroke_5 = Instance.new("UIStroke")
-    local UIStroke_6 = Instance.new("UIStroke")
-    local UIStroke_7 = Instance.new("UIStroke")
-    local UIStroke_8 = Instance.new("UIStroke")
-    local UIStroke_9 = Instance.new("UIStroke")
-    local UIStroke_10 = Instance.new("UIStroke")
     
     ESG.Name = "ESG"
     ESG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -55,167 +65,64 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     
     Main.Name = "Main"
     Main.Parent = ESG
-    Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-    Main.BackgroundTransparency = 0.100
+    Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Main.BorderSizePixel = 0
-    Main.Position = UDim2.new(0.338, 0,0.285, 0)
-    Main.Size = UDim2.new(0, 625, 0, 370)
+    Main.Position = UDim2.new(0.34, 0,0.265, 0)
+    Main.Size = UDim2.new(0, 610, 0, 377)
     Main.Active = true
     Main.Draggable = true
     
-    Title.Name = "Title"
-    Title.Parent = Main
-    Title.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
-    Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Title.BorderSizePixel = 0
-    Title.Position = UDim2.new(0, 0, -0.000352519273, 0)
-    Title.Size = UDim2.new(0, 625, 0, 25)
-    Title.Font = Enum.Font.SourceSans
-    Title.Text = "    Elite Shitty Gui"
-    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Title.TextSize = 20.000
-    Title.TextXAlignment = Enum.TextXAlignment.Left
+    Name.Name = "Name"
+    Name.Parent = Main
+    Name.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Name.BorderSizePixel = 0
+    Name.Position = UDim2.new(0, 0, 0.0160854347, 0)
+    Name.Size = UDim2.new(0, 610, 0, 25)
+    Name.Font = Enum.Font.SourceSans
+    Name.Text = "    Elite Shitty Gui"
+    Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Name.TextSize = 20.000
+    Name.TextXAlignment = Enum.TextXAlignment.Left
+    Name.TextYAlignment = Enum.TextYAlignment.Top
     
-    CloseGui.Name = "CloseGui"
-    CloseGui.Parent = Main
-    CloseGui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    CloseGui.BackgroundTransparency = 1.000
-    CloseGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    CloseGui.BorderSizePixel = 0
-    CloseGui.Position = UDim2.new(0.964999974, 0, 0.00499999989, 0)
-    CloseGui.Size = UDim2.new(0, 20, 0, 20)
-    CloseGui.Font = Enum.Font.SourceSans
-    CloseGui.Text = "X"
-    CloseGui.TextColor3 = Color3.fromRGB(255, 255, 255)
-    CloseGui.TextSize = 20.000
-    CloseGui.MouseButton1Down:connect(function()
-        game.Players.LocalPlayer.PlayerGui.ESG:Destroy()
-    end)
+    UICorner.Parent = Main
     
-    UIStroke.Parent = ListBox 
+    UIStroke.Parent = GuiSections 
     UIStroke.ApplyStrokeMode = "Border"
-    UIStroke.Color = Color3.fromRGB(115, 115, 115)
-    ListBox.Name = "ListBox"
-    ListBox.Parent = Main
-    ListBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    ListBox.BackgroundTransparency = 1.000
-    ListBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    ListBox.BorderSizePixel = 0
-    ListBox.Position = UDim2.new(0.00960000046, 0, 0.0861339644, 0)
-    ListBox.Size = UDim2.new(0, 109, 0, 332)
-    
-    TeamsButton.Name = "TeamsButton"
-    TeamsButton.Parent = ListBox
-    TeamsButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    TeamsButton.BackgroundTransparency = 0.700
-    TeamsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    TeamsButton.BorderSizePixel = 0
-    TeamsButton.Position = UDim2.new(0, 0, 0.0301204827, 0)
-    TeamsButton.Size = UDim2.new(0, 109, 0, 35)
-    TeamsButton.Font = Enum.Font.SourceSans
-    TeamsButton.Text = "Teams"
-    TeamsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TeamsButton.TextSize = 15.000
-    TeamsButton.MouseButton1Down:connect(function()
-        Teams.Visible = true
-        FunStuff.Visible = false
-        Teleports.Visible = false
-        Bypasses.Visible = false
-    end)
-    
-    BypassesButton.Name = "BypassesButton"
-    BypassesButton.Parent = ListBox
-    BypassesButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    BypassesButton.BackgroundTransparency = 0.700
-    BypassesButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    BypassesButton.BorderSizePixel = 0
-    BypassesButton.Position = UDim2.new(0, 0, 0.159638554, 0)
-    BypassesButton.Size = UDim2.new(0, 109, 0, 35)
-    BypassesButton.Font = Enum.Font.SourceSans
-    BypassesButton.Text = "Bypasses"
-    BypassesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    BypassesButton.TextSize = 15.000
-    BypassesButton.MouseButton1Down:connect(function()
-        Teams.Visible = false
-        FunStuff.Visible = false
-        Teleports.Visible = false
-        Bypasses.Visible = true
-    end)
-    
-    FunStuffButton.Name = "FunStuffButton"
-    FunStuffButton.Parent = ListBox
-    FunStuffButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    FunStuffButton.BackgroundTransparency = 0.700
-    FunStuffButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    FunStuffButton.BorderSizePixel = 0
-    FunStuffButton.Position = UDim2.new(0, 0, 0.289156616, 0)
-    FunStuffButton.Size = UDim2.new(0, 109, 0, 35)
-    FunStuffButton.Font = Enum.Font.SourceSans
-    FunStuffButton.Text = "Fun Stuff"
-    FunStuffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    FunStuffButton.TextSize = 15.000
-    FunStuffButton.MouseButton1Down:connect(function()
-        Teams.Visible = false
-        FunStuff.Visible = true
-        Teleports.Visible = false
-        Bypasses.Visible = false
-    end)
-    
-    TeleportsButton.Name = "TeleportsButton"
-    TeleportsButton.Parent = ListBox
-    TeleportsButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    TeleportsButton.BackgroundTransparency = 0.700
-    TeleportsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    TeleportsButton.BorderSizePixel = 0
-    TeleportsButton.Position = UDim2.new(0, 0, 0.418674707, 0)
-    TeleportsButton.Size = UDim2.new(0, 109, 0, 35)
-    TeleportsButton.Font = Enum.Font.SourceSans
-    TeleportsButton.Text = "Teleports"
-    TeleportsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    TeleportsButton.TextSize = 15.000
-    TeleportsButton.MouseButton1Down:connect(function()
-        Teams.Visible = false
-        FunStuff.Visible = false
-        Teleports.Visible = true
-        Bypasses.Visible = false
-    end)
-    
-    UIStroke_2.Parent = GuiSections 
-    UIStroke_2.ApplyStrokeMode = "Border"
-    UIStroke_2.Color = Color3.fromRGB(115, 115, 115)
+    UIStroke.Color = Color3.fromRGB(62, 62, 62)
     GuiSections.Name = "GuiSections"
     GuiSections.Parent = Main
     GuiSections.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     GuiSections.BackgroundTransparency = 1.000
     GuiSections.BorderColor3 = Color3.fromRGB(0, 0, 0)
     GuiSections.BorderSizePixel = 0
-    GuiSections.Position = UDim2.new(0.198400006, 0, 0.0864864886, 0)
-    GuiSections.Size = UDim2.new(0, 492, 0, 332)
+    GuiSections.Position = UDim2.new(0.189999998, 0, 0.100000001, 2)
+    GuiSections.Size = UDim2.new(0, 488, 0, 326)
+    
+    UICorner_2.Parent = GuiSections
     
     Teams.Name = "Teams"
     Teams.Parent = GuiSections
-    Teams.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Teams.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Teams.BackgroundTransparency = 1.000
     Teams.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Teams.BorderSizePixel = 0
-    Teams.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    Teams.Size = UDim2.new(0, 490, 0, 330)
+    Teams.Size = UDim2.new(0, 488, 0, 326)
     Teams.Visible = false
     
-    UIStroke_3.Parent = BecomeScientist 
-    UIStroke_3.ApplyStrokeMode = "Border"
-    UIStroke_3.Color = Color3.fromRGB(115, 115, 115)
+    UICorner_3.Parent = Teams
+    
     BecomeScientist.Name = "BecomeScientist"
     BecomeScientist.Parent = Teams
-    BecomeScientist.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    BecomeScientist.BackgroundTransparency = 0.700
+    BecomeScientist.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     BecomeScientist.BorderColor3 = Color3.fromRGB(0, 0, 0)
     BecomeScientist.BorderSizePixel = 0
-    BecomeScientist.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    BecomeScientist.Size = UDim2.new(0, 70, 0, 36)
+    BecomeScientist.Position = UDim2.new(0.001, 5,0.016, 0)
+    BecomeScientist.Size = UDim2.new(0, 475, 0, 28)
     BecomeScientist.Font = Enum.Font.SourceSans
-    BecomeScientist.Text = "Scientist"
+    BecomeScientist.Text = "Become Scientist"
     BecomeScientist.TextColor3 = Color3.fromRGB(255, 255, 255)
     BecomeScientist.TextSize = 15.000
     BecomeScientist.MouseButton1Down:connect(function()
@@ -226,21 +133,17 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         fireproximityprompt(PP)
     end)
     
-    UICorner.Parent = BecomeScientist
+    UICorner_4.Parent = BecomeScientist
     
-    UIStroke_4.Parent = BecomeZombie 
-    UIStroke_4.ApplyStrokeMode = "Border"
-    UIStroke_4.Color = Color3.fromRGB(115, 115, 115)
     BecomeZombie.Name = "BecomeZombie"
     BecomeZombie.Parent = Teams
-    BecomeZombie.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    BecomeZombie.BackgroundTransparency = 0.700
+    BecomeZombie.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     BecomeZombie.BorderColor3 = Color3.fromRGB(0, 0, 0)
     BecomeZombie.BorderSizePixel = 0
-    BecomeZombie.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    BecomeZombie.Size = UDim2.new(0, 70, 0, 36)
+    BecomeZombie.Position = UDim2.new(0.001, 5,0.11, 2)
+    BecomeZombie.Size = UDim2.new(0, 475, 0, 28)
     BecomeZombie.Font = Enum.Font.SourceSans
-    BecomeZombie.Text = "Zombie"
+    BecomeZombie.Text = "Become Zombie"
     BecomeZombie.TextColor3 = Color3.fromRGB(255, 255, 255)
     BecomeZombie.TextSize = 15.000
     BecomeZombie.MouseButton1Down:connect(function()
@@ -248,34 +151,31 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         firetouchinterest(HRP, game.workspace.Zombie, 0)
     end)
     
-    UICorner_2.Parent = BecomeZombie
+    UICorner_5.Parent = BecomeZombie
     
     Bypasses.Name = "Bypasses"
     Bypasses.Parent = GuiSections
-    Bypasses.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Bypasses.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Bypasses.BackgroundTransparency = 1.000
     Bypasses.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Bypasses.BorderSizePixel = 0
-    Bypasses.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    Bypasses.Size = UDim2.new(0, 490, 0, 330)
+    Bypasses.Size = UDim2.new(0, 488, 0, 326)
     Bypasses.Visible = false
     
-    UIStroke_5.Parent = BypassAntiCheat 
-    UIStroke_5.ApplyStrokeMode = "Border"
-    UIStroke_5.Color = Color3.fromRGB(115, 115, 115)
-    BypassAntiCheat.Name = "BypassAntiCheat"
-    BypassAntiCheat.Parent = Bypasses
-    BypassAntiCheat.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    BypassAntiCheat.BackgroundTransparency = 0.700
-    BypassAntiCheat.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    BypassAntiCheat.BorderSizePixel = 0
-    BypassAntiCheat.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    BypassAntiCheat.Size = UDim2.new(0, 70, 0, 36)
-    BypassAntiCheat.Font = Enum.Font.SourceSans
-    BypassAntiCheat.Text = "Bypass AC"
-    BypassAntiCheat.TextColor3 = Color3.fromRGB(255, 255, 255)
-    BypassAntiCheat.TextSize = 15.000
-    BypassAntiCheat.MouseButton1Down:connect(function()
+    UICorner_6.Parent = Bypasses
+    
+    AntiCheatBypass.Name = "AntiCheatBypass"
+    AntiCheatBypass.Parent = Bypasses
+    AntiCheatBypass.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    AntiCheatBypass.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    AntiCheatBypass.BorderSizePixel = 0
+    AntiCheatBypass.Position = UDim2.new(0.001, 5,0.016, 0)
+    AntiCheatBypass.Size = UDim2.new(0, 475, 0, 28)
+    AntiCheatBypass.Font = Enum.Font.SourceSans
+    AntiCheatBypass.Text = "AntiCheat Bypass"
+    AntiCheatBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
+    AntiCheatBypass.TextSize = 15.000
+    AntiCheatBypass.MouseButton1Down:connect(function()
         local Damage = game:GetService("ReplicatedStorage").AC.Damage
         local ObtainTool = game:GetService("ReplicatedStorage").AC.ObtainTool
         local BrickObtainTool;
@@ -295,29 +195,26 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         end)
     end)
     
-    UICorner_3.Parent = BypassAntiCheat
+    UICorner_7.Parent = AntiCheatBypass
     
     FunStuff.Name = "FunStuff"
     FunStuff.Parent = GuiSections
-    FunStuff.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    FunStuff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     FunStuff.BackgroundTransparency = 1.000
     FunStuff.BorderColor3 = Color3.fromRGB(0, 0, 0)
     FunStuff.BorderSizePixel = 0
-    FunStuff.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    FunStuff.Size = UDim2.new(0, 490, 0, 330)
+    FunStuff.Size = UDim2.new(0, 488, 0, 326)
     FunStuff.Visible = false
     
-    UIStroke_6.Parent = GodGun 
-    UIStroke_6.ApplyStrokeMode = "Border"
-    UIStroke_6.Color = Color3.fromRGB(115, 115, 115)
+    UICorner_8.Parent = FunStuff
+    
     GodGun.Name = "GodGun"
     GodGun.Parent = FunStuff
-    GodGun.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    GodGun.BackgroundTransparency = 0.500
+    GodGun.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     GodGun.BorderColor3 = Color3.fromRGB(0, 0, 0)
     GodGun.BorderSizePixel = 0
-    GodGun.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    GodGun.Size = UDim2.new(0, 70, 0, 36)
+    GodGun.Position = UDim2.new(0.001, 5,0.016, 0)
+    GodGun.Size = UDim2.new(0, 475, 0, 28)
     GodGun.Font = Enum.Font.SourceSans
     GodGun.Text = "God Gun"
     GodGun.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -352,74 +249,45 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         end)
     end)
     
-    UICorner_4.Parent = GodGun
+    UICorner_9.Parent = GodGun
     
-    UIStroke_7.Parent = InfectAll 
-    UIStroke_7.ApplyStrokeMode = "Border"
-    UIStroke_7.Color = Color3.fromRGB(115, 115, 115)
-    InfectAll.Name = "InfectAll"
-    InfectAll.Parent = FunStuff
-    InfectAll.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    InfectAll.BackgroundTransparency = 0.500
-    InfectAll.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    InfectAll.BorderSizePixel = 0
-    InfectAll.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    InfectAll.Size = UDim2.new(0, 70, 0, 36)
-    InfectAll.Font = Enum.Font.SourceSans
-    InfectAll.Text = "Infect All"
-    InfectAll.TextColor3 = Color3.fromRGB(255, 255, 255)
-    InfectAll.TextSize = 15.000
-    InfectAll.MouseButton1Down:connect(function()
-    print("not finished")
+    NotFinishedIA.Name = "NotFinishedIA"
+    NotFinishedIA.Parent = FunStuff
+    NotFinishedIA.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    NotFinishedIA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    NotFinishedIA.BorderSizePixel = 0
+    NotFinishedIA.Position = UDim2.new(0.001, 5,0.11, 2)
+    NotFinishedIA.Size = UDim2.new(0, 475, 0, 28)
+    NotFinishedIA.Font = Enum.Font.SourceSans
+    NotFinishedIA.Text = "Not Finished"
+    NotFinishedIA.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NotFinishedIA.TextSize = 15.000
+    NotFinishedIA.MouseButton1Down:connect(function()
+        warn("Not Finished")
     end)
     
-    UICorner_5.Parent = InfectAll
+    UICorner_10.Parent = NotFinishedIA
     
     Teleports.Name = "Teleports"
     Teleports.Parent = GuiSections
-    Teleports.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Teleports.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Teleports.BackgroundTransparency = 1.000
     Teleports.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Teleports.BorderSizePixel = 0
-    Teleports.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    Teleports.Size = UDim2.new(0, 490, 0, 330)
+    Teleports.Size = UDim2.new(0, 488, 0, 326)
     Teleports.Visible = false
     
-    UIStroke_8.Parent = Outside 
-    UIStroke_8.ApplyStrokeMode = "Border"
-    UIStroke_8.Color = Color3.fromRGB(115, 115, 115)
-    Outside.Name = "Outside"
-    Outside.Parent = Teleports
-    Outside.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    Outside.BackgroundTransparency = 0.500
-    Outside.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Outside.BorderSizePixel = 0
-    Outside.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    Outside.Size = UDim2.new(0, 70, 0, 36)
-    Outside.Font = Enum.Font.SourceSans
-    Outside.Text = "Outside"
-    Outside.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Outside.TextSize = 15.000
-    Outside.MouseButton1Down:connect(function()
-        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
-        HRP.CFrame = game.workspace.Outside.Exit:GetChildren()[11].CFrame
-    end)
+    UICorner_11.Parent = Teleports
     
-    UICorner_6.Parent = Outside
-    
-    UIStroke_9.Parent = ScientistSpawn 
-    UIStroke_9.ApplyStrokeMode = "Border"
-    UIStroke_9.Color = Color3.fromRGB(115, 115, 115)
     ScientistSpawn.Name = "ScientistSpawn"
     ScientistSpawn.Parent = Teleports
-    ScientistSpawn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    ScientistSpawn.BackgroundTransparency = 0.500
+    ScientistSpawn.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     ScientistSpawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
     ScientistSpawn.BorderSizePixel = 0
-    ScientistSpawn.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    ScientistSpawn.Size = UDim2.new(0, 70, 0, 36)
+    ScientistSpawn.Position = UDim2.new(0.001, 5,0.016, 0)
+    ScientistSpawn.Size = UDim2.new(0, 475, 0, 28)
     ScientistSpawn.Font = Enum.Font.SourceSans
-    ScientistSpawn.Text = "Spawn"
+    ScientistSpawn.Text = "Human Spawn"
     ScientistSpawn.TextColor3 = Color3.fromRGB(255, 255, 255)
     ScientistSpawn.TextSize = 15.000
     ScientistSpawn.MouseButton1Down:connect(function()
@@ -427,21 +295,53 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         HRP.CFrame = game.workspace.Scientist.CFrame
     end)
     
-    UICorner_7.Parent = ScientistSpawn
+    UICorner_12.Parent = ScientistSpawn
     
-    UIStroke_10.Parent = BreakerBox 
-    UIStroke_10.ApplyStrokeMode = "Border"
-    UIStroke_10.Color = Color3.fromRGB(115, 115, 115)
+    ZombieSpawn.Name = "ZombieSpawn"
+    ZombieSpawn.Parent = Teleports
+    ZombieSpawn.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    ZombieSpawn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ZombieSpawn.BorderSizePixel = 0
+    ZombieSpawn.Position = UDim2.new(0.001, 5,0.11, 2)
+    ZombieSpawn.Size = UDim2.new(0, 475, 0, 28)
+    ZombieSpawn.Font = Enum.Font.SourceSans
+    ZombieSpawn.Text = "Zombie Spawn"
+    ZombieSpawn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    ZombieSpawn.TextSize = 15.000
+    ZombieSpawn.MouseButton1Down:connect(function()
+        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HRP.CFrame = game.workspace.Zombie.CFrame
+    end)
+    
+    UICorner_13.Parent = ZombieSpawn
+    
+    OutSide.Name = "OutSide"
+    OutSide.Parent = Teleports
+    OutSide.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    OutSide.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    OutSide.BorderSizePixel = 0
+    OutSide.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    OutSide.Size = UDim2.new(0, 475, 0, 28)
+    OutSide.Font = Enum.Font.SourceSans
+    OutSide.Text = "Outside"
+    OutSide.TextColor3 = Color3.fromRGB(255, 255, 255)
+    OutSide.TextSize = 15.000
+    OutSide.MouseButton1Down:connect(function()
+        local HRP = game.Players.LocalPlayer.Character.HumanoidRootPart
+        HRP.CFrame = game.workspace.Outside.Exit:GetChildren()[11].CFrame
+    end)
+    
+    UICorner_14.Parent = OutSide
+    
     BreakerBox.Name = "BreakerBox"
     BreakerBox.Parent = Teleports
-    BreakerBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    BreakerBox.BackgroundTransparency = 0.500
+    BreakerBox.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     BreakerBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
     BreakerBox.BorderSizePixel = 0
-    BreakerBox.Position = UDim2.new(0.351020396, 0, 0.0484848469, 0)
-    BreakerBox.Size = UDim2.new(0, 70, 0, 36)
+    BreakerBox.Position = UDim2.new(0.001, 5,0.21, 3)
+    BreakerBox.Size = UDim2.new(0, 475, 0, 28)
     BreakerBox.Font = Enum.Font.SourceSans
-    BreakerBox.Text = "BreakerBox"
+    BreakerBox.Text = "Breaker Box"
     BreakerBox.TextColor3 = Color3.fromRGB(255, 255, 255)
     BreakerBox.TextSize = 15.000
     BreakerBox.MouseButton1Down:connect(function()
@@ -449,13 +349,139 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         HRP.CFrame = game.workspace.Map.Electrical.PowerModule.PowerModule.CFrame
     end)
     
-    UICorner_8.Parent = BreakerBox
+    UICorner_15.Parent = BreakerBox
+    
+    UIStroke_2.Parent = ListBox 
+    UIStroke_2.ApplyStrokeMode = "Border"
+    UIStroke_2.Color = Color3.fromRGB(62, 62, 62)
+    ListBox.Name = "ListBox"
+    ListBox.Parent = Main
+    ListBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ListBox.BackgroundTransparency = 1.000
+    ListBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ListBox.BorderSizePixel = 0
+    ListBox.Position = UDim2.new(0, 5, 0.100000031, 2)
+    ListBox.Size = UDim2.new(0, 107, 0, 326)
+    
+    UICorner_16.Parent = ListBox
+    
+    BypassesButton.Name = "BypassesButton"
+    BypassesButton.Parent = ListBox
+    BypassesButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    BypassesButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BypassesButton.BorderSizePixel = 0
+    BypassesButton.Position = UDim2.new(0.0409999378, 0, 0.0755950361, 15)
+    BypassesButton.Size = UDim2.new(0, 98, 0, 28)
+    BypassesButton.Font = Enum.Font.SourceSans
+    BypassesButton.Text = "Bypasses"
+    BypassesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    BypassesButton.TextSize = 17.000
+    BypassesButton.TextWrapped = true
+    BypassesButton.MouseButton1Down:connect(function()
+        Teams.Visible = false
+        Bypasses.Visible = true
+        FunStuff.Visible = false
+        Teleports.Visible = false
+    end)
+    
+    UICorner_17.Parent = BypassesButton
+    
+    TeleportsButton.Name = "TeleportsButton"
+    TeleportsButton.Parent = ListBox
+    TeleportsButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    TeleportsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TeleportsButton.BorderSizePixel = 0
+    TeleportsButton.Position = UDim2.new(0.0409999378, 0, 0.31559509, 4)
+    TeleportsButton.Size = UDim2.new(0, 98, 0, 28)
+    TeleportsButton.Font = Enum.Font.SourceSans
+    TeleportsButton.Text = "Teleports"
+    TeleportsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TeleportsButton.TextSize = 17.000
+    TeleportsButton.MouseButton1Down:connect(function()
+        Teams.Visible = false
+        Bypasses.Visible = false
+        FunStuff.Visible = false
+        Teleports.Visible = true
+    end)
+    
+    UICorner_18.Parent = TeleportsButton
+    
+    TeamsButton.Name = "TeamsButton"
+    TeamsButton.Parent = ListBox
+    TeamsButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    TeamsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    TeamsButton.BorderSizePixel = 0
+    TeamsButton.Position = UDim2.new(0.0409999378, 0, 0.0155951381, 0)
+    TeamsButton.Size = UDim2.new(0, 98, 0, 28)
+    TeamsButton.Font = Enum.Font.SourceSans
+    TeamsButton.Text = "Teams"
+    TeamsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TeamsButton.TextSize = 17.000
+    TeamsButton.MouseButton1Down:connect(function()
+        Teams.Visible = true
+        Bypasses.Visible = false
+        FunStuff.Visible = false
+        Teleports.Visible = false
+    end)
+    
+    UICorner_19.Parent = TeamsButton
+    
+    FunStuffButton.Name = "FunStuffButton"
+    FunStuffButton.Parent = ListBox
+    FunStuffButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    FunStuffButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    FunStuffButton.BorderSizePixel = 0
+    FunStuffButton.Position = UDim2.new(0.0409999378, 0, 0.175595149, 16)
+    FunStuffButton.Size = UDim2.new(0, 98, 0, 28)
+    FunStuffButton.Font = Enum.Font.SourceSans
+    FunStuffButton.Text = "Fun Stuff"
+    FunStuffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    FunStuffButton.TextSize = 17.000
+    FunStuffButton.MouseButton1Down:connect(function()
+        Teams.Visible = false
+        Bypasses.Visible = false
+        FunStuff.Visible = true
+        Teleports.Visible = false
+    end)
+    
+    UICorner_20.Parent = FunStuffButton
+    
+    RemoveGui.Name = "RemoveGui"
+    RemoveGui.Parent = Main
+    RemoveGui.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    RemoveGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RemoveGui.BorderSizePixel = 0
+    RemoveGui.Position = UDim2.new(0.948000014, 0, 0.00999999978, 0)
+    RemoveGui.Size = UDim2.new(0, 25, 0, 24)
+    RemoveGui.Font = Enum.Font.SourceSans
+    RemoveGui.Text = "X"
+    RemoveGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+    RemoveGui.TextSize = 20.000
+    RemoveGui.TextYAlignment = Enum.TextYAlignment.Bottom
+    RemoveGui.MouseButton1Down:connect(function()
+        game.Players.LocalPlayer.PlayerGui.ESG:Destroy()
+    end)
+    
+    UICorner_21.Parent = RemoveGui
+    
+    ignore.Name = "ignore"
+    ignore.Parent = Main
+    ignore.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    ignore.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ignore.BorderSizePixel = 0
+    ignore.Size = UDim2.new(0, 610, 0, 6)
+    ignore.Font = Enum.Font.SourceSans
+    ignore.Text = ""
+    ignore.TextColor3 = Color3.fromRGB(0, 0, 0)
+    ignore.TextSize = 14.000
+    
+    UICorner_22.Parent = ignore
     
     local main = Main
     local Opened = true
     
-    local PositionClosed = UDim2.new(0.338, 0,1, 30)
-    local PositionOpened = UDim2.new(0.338, 0,0.285, 0)
+    local PositionClosed = UDim2.new(0.34, 0,1, 5)
+    local PositionOpened = UDim2.new(0.34, 0,0.265, 0)
     UserInputService.InputBegan:connect(function(key, chat)
         if not chat and key.KeyCode == Enum.KeyCode.K then
             if Opened then
@@ -466,60 +492,85 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
             Opened = not Opened
         end
     end)
+    
+    getgenv().ESG = ESG
 else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
+    if getgenv().SG then
+        getgenv().SG:Destroy()
+        getgenv().SG = nil 
+    end
+    
     local UserInputService = game:GetService("UserInputService")
     local SG = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
-    local Title = Instance.new("TextLabel")
-    local CloseGui = Instance.new("TextButton")
-    local ListBox = Instance.new("Frame")
-    local GiveItemsButton = Instance.new("TextButton")
-    local BypassesButton = Instance.new("TextButton")
-    local GamepassesButton = Instance.new("TextButton")
-    local FunStuffButton = Instance.new("TextButton")
-    local GuiSections = Instance.new("Frame")
-    local GiveItems = Instance.new("Frame")
-    local GiveCure = Instance.new("TextButton")
+    local Name = Instance.new("TextLabel")
     local UICorner = Instance.new("UICorner")
-    local GiveVirus = Instance.new("TextButton")
+    local GuiSections = Instance.new("Frame")
     local UICorner_2 = Instance.new("UICorner")
-    local Gamepasses = Instance.new("Frame")
-    local GiveCurePass = Instance.new("TextButton")
+    local Items = Instance.new("Frame")
     local UICorner_3 = Instance.new("UICorner")
-    local GiveVirusPass = Instance.new("TextButton")
+    local GiveCure = Instance.new("TextButton")
     local UICorner_4 = Instance.new("UICorner")
-    local Bypasses = Instance.new("Frame")
-    local RemoveAG = Instance.new("TextButton")
+    local UseCure = Instance.new("TextButton")
     local UICorner_5 = Instance.new("UICorner")
-    local RemoveAntiExploits = Instance.new("TextButton")
+    local UseVirus = Instance.new("TextButton")
     local UICorner_6 = Instance.new("UICorner")
-    local WalkspeedBypass = Instance.new("TextButton")
+    local GiveVirus = Instance.new("TextButton")
     local UICorner_7 = Instance.new("UICorner")
-    local FunStuff = Instance.new("Frame")
-    local GodGun = Instance.new("TextButton")
+    local GiveCureMachine = Instance.new("TextButton")
     local UICorner_8 = Instance.new("UICorner")
-    local Infectall = Instance.new("TextButton")
+    local GiveVirusMachine = Instance.new("TextButton")
     local UICorner_9 = Instance.new("UICorner")
-    local LagServer = Instance.new("TextButton")
+    local Bypasses = Instance.new("Frame")
     local UICorner_10 = Instance.new("UICorner")
-    local AntiInfect = Instance.new("TextButton")
+    local WalkspeedBypass = Instance.new("TextButton")
     local UICorner_11 = Instance.new("UICorner")
-    --local AutoCure = Instance.new("TextButton") -- havent finished this yet, its really easy but im lazy asf.
+    local RemoveAntiExploits = Instance.new("TextButton")
     local UICorner_12 = Instance.new("UICorner")
+    local NotFinishedAGB = Instance.new("TextButton")
+    local UICorner_13 = Instance.new("UICorner")
+    local RemoveZSHBarriers = Instance.new("TextButton")
+    local UICorner_14 = Instance.new("UICorner")
+    local FunStuff = Instance.new("Frame")
+    local UICorner_15 = Instance.new("UICorner")
+    local GodGun = Instance.new("TextButton")
+    local UICorner_16 = Instance.new("UICorner")
+    local InfectAll = Instance.new("TextButton")
+    local UICorner_17 = Instance.new("UICorner")
+    local NotFinishedKA = Instance.new("TextButton")
+    local UICorner_18 = Instance.new("UICorner")
+    local LagServer = Instance.new("TextButton")
+    local UICorner_19 = Instance.new("UICorner")
+    local NotFinishedMA = Instance.new("TextButton")
+    local UICorner_20 = Instance.new("UICorner")
+    local RandomShit = Instance.new("Frame")
+    local UICorner_21 = Instance.new("UICorner")
+    local Ragdoll = Instance.new("TextButton")
+    local UICorner_22 = Instance.new("UICorner")
+    local UnRagdoll = Instance.new("TextButton")
+    local UICorner_23 = Instance.new("UICorner")
+    local CureRandom = Instance.new("TextButton")
+    local UICorner_24 = Instance.new("UICorner")
+    local InfectRandom = Instance.new("TextButton")
+    local UICorner_25 = Instance.new("UICorner")
+    local KillYourself = Instance.new("TextButton")
+    local UICorner_26 = Instance.new("UICorner")
+    local ListBox = Instance.new("Frame")
+    local UICorner_27 = Instance.new("UICorner")
+    local BypassesButton = Instance.new("TextButton")
+    local UICorner_28 = Instance.new("UICorner")
+    local RandomShitButton = Instance.new("TextButton")
+    local UICorner_29 = Instance.new("UICorner")
+    local ItemsButton = Instance.new("TextButton")
+    local UICorner_30 = Instance.new("UICorner")
+    local FunStuffButton = Instance.new("TextButton")
+    local UICorner_31 = Instance.new("UICorner")
+    local RemoveGui = Instance.new("TextButton")
+    local UICorner_32 = Instance.new("UICorner")
+    local ignore = Instance.new("TextLabel")
+    local UICorner_33 = Instance.new("UICorner")
     local UIStroke = Instance.new("UIStroke")
     local UIStroke_2 = Instance.new("UIStroke")
-    local UIStroke_3 = Instance.new("UIStroke")
-    local UIStroke_4 = Instance.new("UIStroke")
-    local UIStroke_5 = Instance.new("UIStroke")
-    local UIStroke_6 = Instance.new("UIStroke")
-    local UIStroke_7 = Instance.new("UIStroke")
-    local UIStroke_8 = Instance.new("UIStroke")
-    local UIStroke_9 = Instance.new("UIStroke")
-    local UIStroke_10 = Instance.new("UIStroke")
-    local UIStroke_11 = Instance.new("UIStroke")
-    local UIStroke_12 = Instance.new("UIStroke")
-    local UIStroke_13 = Instance.new("UIStroke")
-    local UIStroke_14 = Instance.new("UIStroke")
     
     SG.Name = "SG"
     SG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -528,423 +579,343 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     Main.Name = "Main"
     Main.Parent = SG
-    Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-    Main.BackgroundTransparency = 0.100
+    Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Main.BorderSizePixel = 0
-    Main.Position = UDim2.new(0.338, 0,0.285, 0)
-    Main.Size = UDim2.new(0, 625, 0, 370)
-    Main.Draggable = true
+    Main.Position = UDim2.new(0.34, 0,0.265, 0)
+    Main.Size = UDim2.new(0, 610, 0, 377)
     Main.Active = true
+    Main.Draggable = true
     
-    Title.Name = "Title"
-    Title.Parent = Main
-    Title.BackgroundColor3 = Color3.fromRGB(68, 68, 68)
-    Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Title.BorderSizePixel = 0
-    Title.Position = UDim2.new(0, 0, -0.000352519273, 0)
-    Title.Size = UDim2.new(0, 625, 0, 25)
-    Title.Font = Enum.Font.SourceSans
-    Title.Text = "    Shitty Gui"
-    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Title.TextSize = 20.000
-    Title.TextXAlignment = Enum.TextXAlignment.Left
+    Name.Name = "Name"
+    Name.Parent = Main
+    Name.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    Name.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Name.BorderSizePixel = 0
+    Name.Position = UDim2.new(0, 0, 0.0160854347, 0)
+    Name.Size = UDim2.new(0, 610, 0, 25)
+    Name.Font = Enum.Font.SourceSans
+    Name.Text = "       Shitty Gui"
+    Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Name.TextSize = 20.000
+    Name.TextXAlignment = Enum.TextXAlignment.Left
+    Name.TextYAlignment = Enum.TextYAlignment.Top
     
-    CloseGui.Name = "CloseGui"
-    CloseGui.Parent = Main
-    CloseGui.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    CloseGui.BackgroundTransparency = 1.000
-    CloseGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    CloseGui.BorderSizePixel = 0
-    CloseGui.Position = UDim2.new(0.964999974, 0, 0.00499999989, 0)
-    CloseGui.Size = UDim2.new(0, 20, 0, 20)
-    CloseGui.Font = Enum.Font.SourceSans
-    CloseGui.Text = "X"
-    CloseGui.TextColor3 = Color3.fromRGB(255, 255, 255)
-    CloseGui.TextSize = 20.000
-    CloseGui.MouseButton1Down:connect(function()
-        game.Players.LocalPlayer.PlayerGui.SG:Destroy()
-    end)
+    UICorner.Parent = Main
     
-    UIStroke.Parent = ListBox 
+    UIStroke.Parent = GuiSections 
     UIStroke.ApplyStrokeMode = "Border"
-    UIStroke.Color = Color3.fromRGB(115, 115, 115)
-    ListBox.Name = "ListBox"
-    ListBox.Parent = Main
-    ListBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    ListBox.BackgroundTransparency = 1.000
-    ListBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    ListBox.BorderSizePixel = 0
-    ListBox.Position = UDim2.new(0.00960000046, 0, 0.0861339644, 0)
-    ListBox.Size = UDim2.new(0, 109, 0, 332)
-    
-    GiveItemsButton.Name = "GiveItemsButton"
-    GiveItemsButton.Parent = ListBox
-    GiveItemsButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    GiveItemsButton.BackgroundTransparency = 0.700
-    GiveItemsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    GiveItemsButton.BorderSizePixel = 0
-    GiveItemsButton.Position = UDim2.new(0, 0, 0.0301204827, 0)
-    GiveItemsButton.Size = UDim2.new(0, 109, 0, 35)
-    GiveItemsButton.Font = Enum.Font.SourceSans
-    GiveItemsButton.Text = "Items"
-    GiveItemsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    GiveItemsButton.TextSize = 15.000
-    GiveItemsButton.MouseButton1Down:connect(function()
-        GiveItems.Visible = true
-        Bypasses.Visible = false
-        Gamepasses.Visible = false
-        FunStuff.Visible = false
-    end)
-    
-    BypassesButton.Name = "BypassesButton"
-    BypassesButton.Parent = ListBox
-    BypassesButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    BypassesButton.BackgroundTransparency = 0.700
-    BypassesButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    BypassesButton.BorderSizePixel = 0
-    BypassesButton.Position = UDim2.new(0, 0, 0.159638554, 0)
-    BypassesButton.Size = UDim2.new(0, 109, 0, 35)
-    BypassesButton.Font = Enum.Font.SourceSans
-    BypassesButton.Text = "Bypasses"
-    BypassesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    BypassesButton.TextSize = 15.000
-    BypassesButton.MouseButton1Down:connect(function()
-        GiveItems.Visible = false
-        Bypasses.Visible = true
-        Gamepasses.Visible = false
-        FunStuff.Visible = false
-    end)
-    
-    GamepassesButton.Name = "GamepassesButton"
-    GamepassesButton.Parent = ListBox
-    GamepassesButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    GamepassesButton.BackgroundTransparency = 0.700
-    GamepassesButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    GamepassesButton.BorderSizePixel = 0
-    GamepassesButton.Position = UDim2.new(0, 0, 0.289156616, 0)
-    GamepassesButton.Size = UDim2.new(0, 109, 0, 35)
-    GamepassesButton.Font = Enum.Font.SourceSans
-    GamepassesButton.Text = "Gamepasses"
-    GamepassesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    GamepassesButton.TextSize = 15.000
-    GamepassesButton.MouseButton1Down:connect(function()
-        GiveItems.Visible = false
-        Bypasses.Visible = false
-        Gamepasses.Visible = true
-        FunStuff.Visible = false
-    end)
-    
-    FunStuffButton.Name = "FunStuffButton"
-    FunStuffButton.Parent = ListBox
-    FunStuffButton.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-    FunStuffButton.BackgroundTransparency = 0.700
-    FunStuffButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    FunStuffButton.BorderSizePixel = 0
-    FunStuffButton.Position = UDim2.new(0, 0, 0.418674707, 0)
-    FunStuffButton.Size = UDim2.new(0, 109, 0, 35)
-    FunStuffButton.Font = Enum.Font.SourceSans
-    FunStuffButton.Text = "Fun Stuff"
-    FunStuffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-    FunStuffButton.TextSize = 15.000
-    FunStuffButton.MouseButton1Down:connect(function()
-        GiveItems.Visible = false
-        Bypasses.Visible = false
-        Gamepasses.Visible = false
-        FunStuff.Visible = true
-    end)
-    
-    UIStroke_2.Parent = GuiSections
-    UIStroke_2.ApplyStrokeMode = "Border"
-    UIStroke_2.Color = Color3.fromRGB(115, 115, 115)
+    UIStroke.Color = Color3.fromRGB(62, 62, 62)
     GuiSections.Name = "GuiSections"
     GuiSections.Parent = Main
     GuiSections.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     GuiSections.BackgroundTransparency = 1.000
     GuiSections.BorderColor3 = Color3.fromRGB(0, 0, 0)
     GuiSections.BorderSizePixel = 0
-    GuiSections.Position = UDim2.new(0.198400006, 0, 0.0864864886, 0)
-    GuiSections.Size = UDim2.new(0, 492, 0, 332)
+    GuiSections.Position = UDim2.new(0.189999998, 0, 0.100000001, 2)
+    GuiSections.Size = UDim2.new(0, 488, 0, 326)
     
-    GiveItems.Name = "GiveItems"
-    GiveItems.Parent = GuiSections
-    GiveItems.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    GiveItems.BackgroundTransparency = 1.000
-    GiveItems.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    GiveItems.BorderSizePixel = 0
-    GiveItems.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    GiveItems.Size = UDim2.new(0, 490, 0, 330)
-    GiveItems.Visible = false
+    UICorner_2.Parent = GuiSections
     
+    Items.Name = "Items"
+    Items.Parent = GuiSections
+    Items.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Items.BackgroundTransparency = 1.000
+    Items.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Items.BorderSizePixel = 0
+    Items.Size = UDim2.new(0, 488, 0, 326)
+    Items.Visible = false
     
-    UIStroke_3.Parent = GiveCure
-    UIStroke_3.ApplyStrokeMode = "Border"
-    UIStroke_3.Color = Color3.fromRGB(115, 115, 115)
+    UICorner_3.Parent = Items
+    
     GiveCure.Name = "GiveCure"
-    GiveCure.Parent = GiveItems
-    GiveCure.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    GiveCure.BackgroundTransparency = 0.700
+    GiveCure.Parent = Items
+    GiveCure.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     GiveCure.BorderColor3 = Color3.fromRGB(0, 0, 0)
     GiveCure.BorderSizePixel = 0
-    GiveCure.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    GiveCure.Size = UDim2.new(0, 70, 0, 36)
+    GiveCure.Position = UDim2.new(0.001, 5,0.016, 0)
+    GiveCure.Size = UDim2.new(0, 475, 0, 28)
     GiveCure.Font = Enum.Font.SourceSans
-    GiveCure.Text = "Cure"
+    GiveCure.Text = "Give Cure"
     GiveCure.TextColor3 = Color3.fromRGB(255, 255, 255)
     GiveCure.TextSize = 15.000
     GiveCure.MouseButton1Down:connect(function()
         game:GetService("ReplicatedStorage").Remotes.GiveCure:FireServer()
     end)
     
-    UICorner.Parent = GiveCure
+    UICorner_4.Parent = GiveCure
     
-    UIStroke_4.Parent = GiveVirus
-    UIStroke_4.ApplyStrokeMode = "Border"
-    UIStroke_4.Color = Color3.fromRGB(115, 115, 115)
+    UseCure.Name = "UseCure"
+    UseCure.Parent = Items
+    UseCure.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    UseCure.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    UseCure.BorderSizePixel = 0
+    UseCure.Position = UDim2.new(0.001, 5,0.11, 2)
+    UseCure.Size = UDim2.new(0, 475, 0, 28)
+    UseCure.Font = Enum.Font.SourceSans
+    UseCure.Text = "Use Cure"
+    UseCure.TextColor3 = Color3.fromRGB(255, 255, 255)
+    UseCure.TextSize = 15.000
+    UseCure.MouseButton1Down:connect(function()
+        game:GetService("Players").LocalPlayer.Backpack.Cure.UseSelf:FireServer()
+    end)
+    
+    UICorner_5.Parent = UseCure
+    
     GiveVirus.Name = "GiveVirus"
-    GiveVirus.Parent = GiveItems
-    GiveVirus.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    GiveVirus.BackgroundTransparency = 0.700
+    GiveVirus.Parent = Items
+    GiveVirus.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     GiveVirus.BorderColor3 = Color3.fromRGB(0, 0, 0)
     GiveVirus.BorderSizePixel = 0
-    GiveVirus.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    GiveVirus.Size = UDim2.new(0, 70, 0, 36)
+    GiveVirus.Position = UDim2.new(0.001, 5,0.21, 3) 
+    GiveVirus.Size = UDim2.new(0, 475, 0, 28)
     GiveVirus.Font = Enum.Font.SourceSans
-    GiveVirus.Text = "Virus"
+    GiveVirus.Text = "Give Virus"
     GiveVirus.TextColor3 = Color3.fromRGB(255, 255, 255)
     GiveVirus.TextSize = 15.000
     GiveVirus.MouseButton1Down:connect(function()
         game:GetService("ReplicatedStorage").Remotes.GiveVirus:FireServer()
     end)
     
-    UICorner_2.Parent = GiveVirus
+    UICorner_6.Parent = GiveVirus
     
-    Gamepasses.Name = "Gamepasses"
-    Gamepasses.Parent = GuiSections
-    Gamepasses.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    Gamepasses.BackgroundTransparency = 1.000
-    Gamepasses.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Gamepasses.BorderSizePixel = 0
-    Gamepasses.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    Gamepasses.Size = UDim2.new(0, 490, 0, 330)
-    Gamepasses.Visible = false
+    UseVirus.Name = "UseVirus"
+    UseVirus.Parent = Items
+    UseVirus.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    UseVirus.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    UseVirus.BorderSizePixel = 0
+    UseVirus.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    UseVirus.Size = UDim2.new(0, 475, 0, 28)
+    UseVirus.Font = Enum.Font.SourceSans
+    UseVirus.Text = "Use Virus"
+    UseVirus.TextColor3 = Color3.fromRGB(255, 255, 255)
+    UseVirus.TextSize = 15.000
+    UseVirus.MouseButton1Down:connect(function()
+        game:GetService("Players").LocalPlayer.Backpack.Virus.UseSelf:FireServer()
+    end)
     
-    UIStroke_5.Parent = GiveCurePass
-    UIStroke_5.ApplyStrokeMode = "Border"
-    UIStroke_5.Color = Color3.fromRGB(115, 115, 115)
-    GiveCurePass.Name = "GiveCurePass"
-    GiveCurePass.Parent = Gamepasses
-    GiveCurePass.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    GiveCurePass.BackgroundTransparency = 0.700
-    GiveCurePass.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    GiveCurePass.BorderSizePixel = 0
-    GiveCurePass.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    GiveCurePass.Size = UDim2.new(0, 70, 0, 36)
-    GiveCurePass.Font = Enum.Font.SourceSans
-    GiveCurePass.Text = "Cure Pass"
-    GiveCurePass.TextColor3 = Color3.fromRGB(255, 255, 255)
-    GiveCurePass.TextSize = 15.000
-    GiveCurePass.MouseButton1Down:connect(function()
+    UICorner_7.Parent = UseVirus
+    
+    GiveCureMachine.Name = "GiveCureMachine"
+    GiveCureMachine.Parent = Items
+    GiveCureMachine.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    GiveCureMachine.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    GiveCureMachine.BorderSizePixel = 0
+    GiveCureMachine.Position = UDim2.new(0.001, 5,0.4, 7, 9)
+    GiveCureMachine.Size = UDim2.new(0, 475, 0, 28)
+    GiveCureMachine.Font = Enum.Font.SourceSans
+    GiveCureMachine.Text = "Give Cure Machine"
+    GiveCureMachine.TextColor3 = Color3.fromRGB(255, 255, 255)
+    GiveCureMachine.TextSize = 15.000
+    GiveCureMachine.MouseButton1Down:connect(function()
         game.ReplicatedStorage:WaitForChild("LocalFolder").GamepassCureMachine.Parent = workspace
     end)
     
-    UICorner_3.Parent = GiveCurePass
+    UICorner_8.Parent = GiveCureMachine
     
-    UIStroke_6.Parent = GiveVirusPass
-    UIStroke_6.ApplyStrokeMode = "Border"
-    UIStroke_6.Color = Color3.fromRGB(115, 115, 115)
-    GiveVirusPass.Name = "GiveVirusPass"
-    GiveVirusPass.Parent = Gamepasses
-    GiveVirusPass.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    GiveVirusPass.BackgroundTransparency = 0.700
-    GiveVirusPass.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    GiveVirusPass.BorderSizePixel = 0
-    GiveVirusPass.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    GiveVirusPass.Size = UDim2.new(0, 70, 0, 36)
-    GiveVirusPass.Font = Enum.Font.SourceSans
-    GiveVirusPass.Text = "Virus Pass"
-    GiveVirusPass.TextColor3 = Color3.fromRGB(255, 255, 255)
-    GiveVirusPass.TextSize = 15.000
-    GiveVirusPass.MouseButton1Down:connect(function()
+    GiveVirusMachine.Name = "GiveVirusMachine"
+    GiveVirusMachine.Parent = Items
+    GiveVirusMachine.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    GiveVirusMachine.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    GiveVirusMachine.BorderSizePixel = 0
+    GiveVirusMachine.Position = UDim2.new(0.001, 5,0.5, 7)
+    GiveVirusMachine.Size = UDim2.new(0, 475, 0, 28)
+    GiveVirusMachine.Font = Enum.Font.SourceSans
+    GiveVirusMachine.Text = "Give Virus Machine"
+    GiveVirusMachine.TextColor3 = Color3.fromRGB(255, 255, 255)
+    GiveVirusMachine.TextSize = 15.000
+    GiveVirusMachine.MouseButton1Down:connect(function()
         game.ReplicatedStorage:WaitForChild("LocalFolder").GamepassVirusMachine.Parent = workspace
     end)
     
-    UICorner_4.Parent = GiveVirusPass
+    UICorner_9.Parent = GiveVirusMachine
     
     Bypasses.Name = "Bypasses"
     Bypasses.Parent = GuiSections
-    Bypasses.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Bypasses.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Bypasses.BackgroundTransparency = 1.000
     Bypasses.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Bypasses.BorderSizePixel = 0
-    Bypasses.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    Bypasses.Size = UDim2.new(0, 490, 0, 330)
+    Bypasses.Size = UDim2.new(0, 488, 0, 326)
     Bypasses.Visible = false
     
-    UIStroke_7.Parent = RemoveAG
-    UIStroke_7.ApplyStrokeMode = "Border"
-    UIStroke_7.Color = Color3.fromRGB(115, 115, 115)
-    RemoveAG.Name = "RemoveAG"
-    RemoveAG.Parent = Bypasses
-    RemoveAG.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    RemoveAG.BackgroundTransparency = 0.700
-    RemoveAG.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    RemoveAG.BorderSizePixel = 0
-    RemoveAG.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    RemoveAG.Size = UDim2.new(0, 70, 0, 36)
-    RemoveAG.Font = Enum.Font.SourceSans
-    RemoveAG.Text = "Remove AG"
-    RemoveAG.TextColor3 = Color3.fromRGB(255, 255, 255)
-    RemoveAG.TextSize = 15.000
-    RemoveAG.MouseButton1Down:connect(function()
+    UICorner_10.Parent = Bypasses
+    
+    WalkspeedBypass.Name = "WalkspeedBypass"
+    WalkspeedBypass.Parent = Bypasses
+    WalkspeedBypass.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    WalkspeedBypass.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    WalkspeedBypass.BorderSizePixel = 0
+    WalkspeedBypass.Position = UDim2.new(0.001, 5,0.016, 0)
+    WalkspeedBypass.Size = UDim2.new(0, 475, 0, 28)
+    WalkspeedBypass.Font = Enum.Font.SourceSans
+    WalkspeedBypass.Text = "Walkspeed Bypass"
+    WalkspeedBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
+    WalkspeedBypass.TextSize = 15.000
+    WalkspeedBypass.MouseButton1Down:connect(function()
+        for _, connection in getconnections(game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
+            connection:Disable()
+        end
+    end)
+    
+    UICorner_11.Parent = WalkspeedBypass
+    
+    RemoveAntiExploits.Name = "RemoveAntiExploits"
+    RemoveAntiExploits.Parent = Bypasses
+    RemoveAntiExploits.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    RemoveAntiExploits.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RemoveAntiExploits.BorderSizePixel = 0
+    RemoveAntiExploits.Position = UDim2.new(0.001, 5,0.11, 2)
+    RemoveAntiExploits.Size = UDim2.new(0, 475, 0, 28)
+    RemoveAntiExploits.Font = Enum.Font.SourceSans
+    RemoveAntiExploits.Text = "Remove Anti-Exploits"
+    RemoveAntiExploits.TextColor3 = Color3.fromRGB(255, 255, 255)
+    RemoveAntiExploits.TextSize = 15.000
+    RemoveAntiExploits.MouseButton1Down:connect(function()
+        game.Players.LocalPlayer.PlayerGui["PlayerLocalScripts(ReOnSp)"].AntiWeaponZone:Destroy()
+        game.Players.LocalPlayer.PlayerGui["PlayerLocalScripts(ReOnSp)"].HumanOnlyDoor:Destroy()
+    end)
+    
+    UICorner_12.Parent = RemoveAntiExploits
+    
+    NotFinishedAGB.Name = "NotFinishedAGB"
+    NotFinishedAGB.Parent = Bypasses
+    NotFinishedAGB.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    NotFinishedAGB.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    NotFinishedAGB.BorderSizePixel = 0
+    NotFinishedAGB.Position = UDim2.new(0.001, 5,0.21, 3)
+    NotFinishedAGB.Size = UDim2.new(0, 475, 0, 28)
+    NotFinishedAGB.Font = Enum.Font.SourceSans
+    NotFinishedAGB.Text = "Not Finished"
+    NotFinishedAGB.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NotFinishedAGB.TextSize = 15.000
+    NotFinishedAGB.MouseButton1Down:connect(function()
+        warn("Not finished")
+    end)
+    
+    UICorner_13.Parent = NotFinishedAGB
+    
+    RemoveZSHBarriers.Name = "RemoveZSHBarriers"
+    RemoveZSHBarriers.Parent = Bypasses
+    RemoveZSHBarriers.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    RemoveZSHBarriers.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RemoveZSHBarriers.BorderSizePixel = 0
+    RemoveZSHBarriers.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    RemoveZSHBarriers.Size = UDim2.new(0, 475, 0, 28)
+    RemoveZSHBarriers.Font = Enum.Font.SourceSans
+    RemoveZSHBarriers.Text = "Remove Zombie/Human Barriers"
+    RemoveZSHBarriers.TextColor3 = Color3.fromRGB(255, 255, 255)
+    RemoveZSHBarriers.TextSize = 15.000
+    RemoveZSHBarriers.MouseButton1Down:connect(function()
         game.workspace.AntiGlitch.AntiZombie:Destroy()
         game.workspace.ZombieBlockers.Blocker:Destroy()
     end)
     
-    UICorner_5.Parent = RemoveAG
-    
-    UIStroke_8.Parent = RemoveAntiExploits
-    UIStroke_8.ApplyStrokeMode = "Border"
-    UIStroke_8.Color = Color3.fromRGB(115, 115, 115)
-    RemoveAntiExploits.Name = "RemoveAntiExploits"
-    RemoveAntiExploits.Parent = Bypasses
-    RemoveAntiExploits.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    RemoveAntiExploits.BackgroundTransparency = 0.700
-    RemoveAntiExploits.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    RemoveAntiExploits.BorderSizePixel = 0
-    RemoveAntiExploits.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    RemoveAntiExploits.Size = UDim2.new(0, 70, 0, 36)
-    RemoveAntiExploits.Font = Enum.Font.SourceSans
-    RemoveAntiExploits.Text = "Remove AE"
-    RemoveAntiExploits.TextColor3 = Color3.fromRGB(255, 255, 255)
-    RemoveAntiExploits.TextSize = 15.000
-    RemoveAntiExploits.MouseButton1Down:connect(function()
-    	game.Players.LocalPlayer.PlayerGui["PlayerLocalScripts(ReOnSp)"].AntiWeaponZone:Destroy()
-    	game.Players.LocalPlayer.PlayerGui["PlayerLocalScripts(ReOnSp)"].HumanOnlyDoor:Destroy()
-    end)
-    
-    UICorner_6.Parent = RemoveAntiExploits
-    
-    UIStroke_9.Parent = WalkspeedBypass
-    UIStroke_9.ApplyStrokeMode = "Border"
-    UIStroke_9.Color = Color3.fromRGB(115, 115, 115)
-    WalkspeedBypass.Name = "WalkspeedBypass"
-    WalkspeedBypass.Parent = Bypasses
-    WalkspeedBypass.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    WalkspeedBypass.BackgroundTransparency = 0.700
-    WalkspeedBypass.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    WalkspeedBypass.BorderSizePixel = 0
-    WalkspeedBypass.Position = UDim2.new(0.351020396, 0, 0.0484848469, 0)
-    WalkspeedBypass.Size = UDim2.new(0, 70, 0, 36)
-    WalkspeedBypass.Font = Enum.Font.SourceSans
-    WalkspeedBypass.Text = "WS Bypass"
-    WalkspeedBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
-    WalkspeedBypass.TextSize = 15.000
-    WalkspeedBypass.MouseButton1Down:connect(function()
-    for _, connection in getconnections(game.Players.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
-        connection:Disable()
-    end
-    end)
-    
-    UICorner_7.Parent = WalkspeedBypass
+    UICorner_14.Parent = RemoveZSHBarriers
     
     FunStuff.Name = "FunStuff"
     FunStuff.Parent = GuiSections
-    FunStuff.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    FunStuff.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     FunStuff.BackgroundTransparency = 1.000
     FunStuff.BorderColor3 = Color3.fromRGB(0, 0, 0)
     FunStuff.BorderSizePixel = 0
-    FunStuff.Position = UDim2.new(0.00203252025, 0, 0.00301204808, 0)
-    FunStuff.Size = UDim2.new(0, 490, 0, 330)
+    FunStuff.Size = UDim2.new(0, 488, 0, 326)
     FunStuff.Visible = false
     
-    UIStroke_10.Parent = GodGun 
-    UIStroke_10.ApplyStrokeMode = "Border"
-    UIStroke_10.Color = Color3.fromRGB(115, 115, 115)
+    UICorner_15.Parent = FunStuff
+    
     GodGun.Name = "GodGun"
     GodGun.Parent = FunStuff
-    GodGun.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    GodGun.BackgroundTransparency = 0.500
+    GodGun.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     GodGun.BorderColor3 = Color3.fromRGB(0, 0, 0)
     GodGun.BorderSizePixel = 0
-    GodGun.Position = UDim2.new(0.0285714287, 0, 0.0484848469, 0)
-    GodGun.Size = UDim2.new(0, 70, 0, 36)
+    GodGun.Position = UDim2.new(0.001, 5,0.016, 0)
+    GodGun.Size = UDim2.new(0, 475, 0, 28)
     GodGun.Font = Enum.Font.SourceSans
     GodGun.Text = "God Gun"
     GodGun.TextColor3 = Color3.fromRGB(255, 255, 255)
     GodGun.TextSize = 15.000
     GodGun.MouseButton1Down:connect(function()
-    	local Faggot = game:GetService("Players").LocalPlayer.Backpack
+        local Faggot = game:GetService("Players").LocalPlayer.Backpack
     
-    	function ModsRapeHim(v)
-    		if v:FindFirstChild("Setting") then
-    			local NegaWatt = require(v.Setting)
-    			NegaWatt.FireRate = 0.03
-    			NegaWatt.Auto = true
-    			NegaWatt.AmmoPerClip = 9e9
-    			NegaWatt.ReloadTime = 0
-    			NegaWatt.BaseDamage = 999
-    			NegaWatt.HeadshotDamageMultiplier = 999
-    			NegaWatt.Spread = 0
-    			NegaWatt.CameraShakingEnabled = false
-    			NegaWatt.BulletSpeed = 9e9
+        function ModsRapeHim(v)
+            if v:FindFirstChild("Setting") then
+                local NegaWatt = require(v.Setting)
+                NegaWatt.FireRate = 0.03
+                NegaWatt.Auto = true
+                NegaWatt.AmmoPerClip = math.huge
+                NegaWatt.ReloadTime = 0
+                NegaWatt.BaseDamage = 999
+                NegaWatt.HeadshotDamageMultiplier = 999
+                NegaWatt.Spread = 0
+                NegaWatt.CameraShakingEnabled = false
+                NegaWatt.BulletSpeed = 9e9
+                NegaWatt.Piercing = 1
+            end
+        end
     
-    		end
-    	end
-    
-    	for _, v in next, Faggot:GetChildren() do
-    		ModsRapeHim(v)
-    	end
-    	Faggot.ChildAdded:Connect(function(v)
-    		ModsRapeHim(v)
-    	end)
+        for _, v in next, Faggot:GetChildren() do
+            ModsRapeHim(v)
+        end
+        Faggot.ChildAdded:Connect(function(v)
+            ModsRapeHim(v)
+        end)
     end)
     
-    UICorner_8.Parent = GodGun
+    UICorner_16.Parent = GodGun
     
-    UIStroke_11.Parent = Infectall
-    UIStroke_11.ApplyStrokeMode = "Border"
-    UIStroke_11.Color = Color3.fromRGB(115, 115, 115)
-    Infectall.Name = "Infectall"
-    Infectall.Parent = FunStuff
-    Infectall.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    Infectall.BackgroundTransparency = 0.500
-    Infectall.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    Infectall.BorderSizePixel = 0
-    Infectall.Position = UDim2.new(0.189140603, 0, 0.0484848469, 0)
-    Infectall.Size = UDim2.new(0, 70, 0, 36)
-    Infectall.Font = Enum.Font.SourceSans
-    Infectall.Text = "Infect all"
-    Infectall.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Infectall.TextSize = 15.000
-    Infectall.MouseButton1Down:connect(function()
+    InfectAll.Name = "InfectAll"
+    InfectAll.Parent = FunStuff
+    InfectAll.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    InfectAll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    InfectAll.BorderSizePixel = 0
+    InfectAll.Position = UDim2.new(0.001, 5,0.11, 2)
+    InfectAll.Size = UDim2.new(0, 475, 0, 28)
+    InfectAll.Font = Enum.Font.SourceSans
+    InfectAll.Text = "Infect All"
+    InfectAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+    InfectAll.TextSize = 15.000
+    InfectAll.MouseButton1Down:connect(function()
         local lplr = game.Players.LocalPlayer
-    
+            
         lplr.Character.Infect.Activated:Connect(function()
         for _, v in game.Players:GetPlayers() do
             if lplr ~= v and v.Character and v.Team ~= lplr.Team and v.Character.PrimaryPart then
-             firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 0)
-             firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 1)
+            firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 0)
+            firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 1)
             end
         end
     end)
     end)
     
-    UICorner_9.Parent = Infectall
+    UICorner_17.Parent = InfectAll
     
-    UIStroke_12.Parent = LagServer
-    UIStroke_12.ApplyStrokeMode = "Border"
-    UIStroke_12.Color = Color3.fromRGB(115, 115, 115)
+    NotFinishedKA.Name = "NotFinishedKA"
+    NotFinishedKA.Parent = FunStuff
+    NotFinishedKA.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    NotFinishedKA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    NotFinishedKA.BorderSizePixel = 0
+    NotFinishedKA.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    NotFinishedKA.Size = UDim2.new(0, 475, 0, 28)
+    NotFinishedKA.Font = Enum.Font.SourceSans
+    NotFinishedKA.Text = "Not Finished"
+    NotFinishedKA.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NotFinishedKA.TextSize = 15.000
+    NotFinishedKA.MouseButton1Down:connect(function()
+    warn("Not finished")
+    end)
+    
+    UICorner_18.Parent = NotFinishedKA
+    
     LagServer.Name = "LagServer"
     LagServer.Parent = FunStuff
-    LagServer.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    LagServer.BackgroundTransparency = 0.500
+    LagServer.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
     LagServer.BorderColor3 = Color3.fromRGB(0, 0, 0)
     LagServer.BorderSizePixel = 0
-    LagServer.Position = UDim2.new(0.351020396, 0, 0.0484848469, 0)
-    LagServer.Size = UDim2.new(0, 70, 0, 36)
+    LagServer.Position = UDim2.new(0.001, 5,0.4, 7, 9)
+    LagServer.Size = UDim2.new(0, 475, 0, 28)
     LagServer.Font = Enum.Font.SourceSans
-    LagServer.Text = "Lag Server"
+    LagServer.Text = "LagServer"
     LagServer.TextColor3 = Color3.fromRGB(255, 255, 255)
     LagServer.TextSize = 15.000
     LagServer.MouseButton1Down:connect(function()
@@ -954,72 +925,282 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
             end
     end)
     
-    UICorner_10.Parent = LagServer
+    UICorner_19.Parent = LagServer
     
-    UIStroke_13.Parent = AntiInfect
-    UIStroke_13.ApplyStrokeMode = "Border"
-    UIStroke_13.Color = Color3.fromRGB(115, 115, 115)
-    AntiInfect.Name = "AntiInfect"
-    AntiInfect.Parent = FunStuff
-    AntiInfect.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    AntiInfect.BackgroundTransparency = 0.500
-    AntiInfect.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    AntiInfect.BorderSizePixel = 0
-    AntiInfect.Position = UDim2.new(0.511589587, 0, 0.0484848469, 0)
-    AntiInfect.Size = UDim2.new(0, 70, 0, 36)
-    AntiInfect.Font = Enum.Font.SourceSans
-    AntiInfect.Text = "Anti infect"
-    AntiInfect.TextColor3 = Color3.fromRGB(255, 255, 255)
-    AntiInfect.TextSize = 15.000
-    AntiInfect.MouseButton1Down:connect(function()
-        local I = game.Players.LocalPlayer.Character.Infected
+    NotFinishedMA.Name = "Not FinishedMA"
+    NotFinishedMA.Parent = FunStuff
+    NotFinishedMA.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    NotFinishedMA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    NotFinishedMA.BorderSizePixel = 0
+    NotFinishedMA.Position = UDim2.new(0.001, 5,0.21, 3)
+    NotFinishedMA.Size = UDim2.new(0, 475, 0, 28)
+    NotFinishedMA.Font = Enum.Font.SourceSans
+    NotFinishedMA.Text = "Not Finished"
+    NotFinishedMA.TextColor3 = Color3.fromRGB(255, 255, 255)
+    NotFinishedMA.TextSize = 15.000
+    NotFinishedMA.MouseButton1Down:connect(function()
+        warn("Not finished")
+    end)
     
-        local AI;
+    UICorner_20.Parent = NotFinishedMA
     
-        AI = hookmetamethod(game, "__index", function(self, valuey)
-            if not checkcaller() and self == I and valuey == "value" then return false end
-            return AI(self, valuey, false) 
-            end)
+    RandomShit.Name = "RandomShit"
+    RandomShit.Parent = GuiSections
+    RandomShit.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    RandomShit.BackgroundTransparency = 1.000
+    RandomShit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RandomShit.BorderSizePixel = 0
+    RandomShit.Size = UDim2.new(0, 488, 0, 326)
+    RandomShit.Visible = false
+    
+    UICorner_21.Parent = RandomShit
+    
+    Ragdoll.Name = "Ragdoll"
+    Ragdoll.Parent = RandomShit
+    Ragdoll.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    Ragdoll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Ragdoll.BorderSizePixel = 0
+    Ragdoll.Position = UDim2.new(0.001, 5,0.016, 0)
+    Ragdoll.Size = UDim2.new(0, 475, 0, 28)
+    Ragdoll.Font = Enum.Font.SourceSans
+    Ragdoll.Text = "Ragdoll"
+    Ragdoll.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Ragdoll.TextSize = 15.000
+    Ragdoll.MouseButton1Down:connect(function()
+        game:GetService("ReplicatedStorage").Remotes.ChangeState:FireServer("Ragdoll")
+    end)
+    
+    UICorner_22.Parent = Ragdoll
+    
+    UnRagdoll.Name = "UnRagdoll"
+    UnRagdoll.Parent = RandomShit
+    UnRagdoll.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    UnRagdoll.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    UnRagdoll.BorderSizePixel = 0
+    UnRagdoll.Position = UDim2.new(0.001, 5,0.11, 2)
+    UnRagdoll.Size = UDim2.new(0, 475, 0, 28)
+    UnRagdoll.Font = Enum.Font.SourceSans
+    UnRagdoll.Text = "UnRagdoll"
+    UnRagdoll.TextColor3 = Color3.fromRGB(255, 255, 255)
+    UnRagdoll.TextSize = 15.000
+    UnRagdoll.MouseButton1Down:connect(function()
+        game:GetService("ReplicatedStorage").Remotes.ChangeState:FireServer("Ragdoll")
     end)
     
     
-    UICorner_11.Parent = AntiInfect
+    UICorner_23.Parent = UnRagdoll
     
-    --[[UIStroke_14.Parent = AutoCure
-    UIStroke_14.ApplyStrokeMode = "Border"
-    UIStroke_14.Color = Color3.fromRGB(115, 115, 115)
-    AutoCure.Name = "AutoCure"
-    AutoCure.Parent = FunStuff
-    AutoCure.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-    AutoCure.BackgroundTransparency = 0.500
-    AutoCure.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    AutoCure.BorderSizePixel = 0
-    AutoCure.Position = UDim2.new(0.671428561, 0, 0.0484848469, 0)
-    AutoCure.Size = UDim2.new(0, 70, 0, 36)
-    AutoCure.Font = Enum.Font.SourceSans
-    AutoCure.Text = "Auto Cure"
-    AutoCure.TextColor3 = Color3.fromRGB(255, 255, 255)
-    AutoCure.TextSize = 15.000
-    AutoCure.MouseButton1Down:connect(function()
+    CureRandom.Name = "Cure Random"
+    CureRandom.Parent = RandomShit
+    CureRandom.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    CureRandom.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    CureRandom.BorderSizePixel = 0
+    CureRandom.Position = UDim2.new(0.001, 5,0.21, 3)
+    CureRandom.Size = UDim2.new(0, 475, 0, 28)
+    CureRandom.Font = Enum.Font.SourceSans
+    CureRandom.Text = "CureRandom"
+    CureRandom.TextColor3 = Color3.fromRGB(255, 255, 255)
+    CureRandom.TextSize = 15.000
+    CureRandom.MouseButton1Down:connect(function()
+        local lplr = game.Players.LocalPlayer
     
+        lplr.Character.Cure.Activated:Connect(function()
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Team == Teams.Zombie and v.Character.PrimaryPart then
+             firetouchinterest(lplr.Character.Cure.Handle, v.Character.PrimaryPart, 0)
+             firetouchinterest(lplr.Character.Cure.Handle, v.Character.PrimaryPart, 1)
+            end
+        end
+    end)
     end)
     
-    UICorner_12.Parent = AutoCure]]
+    UICorner_24.Parent = CureRandom
+    
+    InfectRandom.Name = "InfectRandom"
+    InfectRandom.Parent = RandomShit
+    InfectRandom.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    InfectRandom.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    InfectRandom.BorderSizePixel = 0
+    InfectRandom.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    InfectRandom.Size = UDim2.new(0, 475, 0, 28)
+    InfectRandom.Font = Enum.Font.SourceSans
+    InfectRandom.Text = "Infect Random"
+    InfectRandom.TextColor3 = Color3.fromRGB(255, 255, 255)
+    InfectRandom.TextSize = 15.000
+    InfectRandom.MouseButton1Down:connect(function()
+        local lplr = game.Players.LocalPlayer
+    
+        lplr.Character.Virus.Activated:Connect(function()
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Character.PrimaryPart then
+             firetouchinterest(lplr.Character.Virus.Handle, v.Character.PrimaryPart, 0)
+             firetouchinterest(lplr.Character.Virus.Handle, v.Character.PrimaryPart, 1)
+            end
+        end
+    end)
+    end)
+    
+    UICorner_25.Parent = InfectRandom
+    
+    KillYourself.Name = "KillYourself"
+    KillYourself.Parent = RandomShit
+    KillYourself.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    KillYourself.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    KillYourself.BorderSizePixel = 0
+    KillYourself.Position = UDim2.new(0.001, 5,0.4, 7, 9)
+    KillYourself.Size = UDim2.new(0, 475, 0, 28)
+    KillYourself.Font = Enum.Font.SourceSans
+    KillYourself.Text = "Kill Yourself"
+    KillYourself.TextColor3 = Color3.fromRGB(255, 255, 255)
+    KillYourself.TextSize = 15.000
+    KillYourself.MouseButton1Down:connect(function()
+        game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+    end)
+    
+    UICorner_26.Parent = KillYourself
+    
+    UIStroke_2.Parent = ListBox 
+    UIStroke_2.ApplyStrokeMode = "Border"
+    UIStroke_2.Color = Color3.fromRGB(62, 62, 62)
+    ListBox.Name = "ListBox"
+    ListBox.Parent = Main
+    ListBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ListBox.BackgroundTransparency = 1.000
+    ListBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ListBox.BorderSizePixel = 0
+    ListBox.Position = UDim2.new(0, 5, 0.100000031, 2)
+    ListBox.Size = UDim2.new(0, 107, 0, 326)
+    
+    UICorner_27.Parent = ListBox
+    
+    BypassesButton.Name = "BypassesButton"
+    BypassesButton.Parent = ListBox
+    BypassesButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    BypassesButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    BypassesButton.BorderSizePixel = 0
+    BypassesButton.Position = UDim2.new(0.0409999378, 0, 0.0755950361, 15)
+    BypassesButton.Size = UDim2.new(0, 98, 0, 28)
+    BypassesButton.Font = Enum.Font.SourceSans
+    BypassesButton.Text = "Bypasses"
+    BypassesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    BypassesButton.TextSize = 17.000
+    BypassesButton.TextWrapped = true
+    BypassesButton.MouseButton1Down:connect(function()
+        Items.Visible = false
+        Bypasses.Visible = true
+        FunStuff.Visible = false
+        RandomShit.Visible = false
+    end)
+    
+    UICorner_28.Parent = BypassesButton
+    
+    RandomShitButton.Name = "RandomShitButton"
+    RandomShitButton.Parent = ListBox
+    RandomShitButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    RandomShitButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RandomShitButton.BorderSizePixel = 0
+    RandomShitButton.Position = UDim2.new(0.0409999378, 0, 0.31559509, 4)
+    RandomShitButton.Size = UDim2.new(0, 98, 0, 28)
+    RandomShitButton.Font = Enum.Font.SourceSans
+    RandomShitButton.Text = "Random Shit"
+    RandomShitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    RandomShitButton.TextSize = 17.000
+    RandomShitButton.MouseButton1Down:connect(function()
+        Items.Visible = false
+        Bypasses.Visible = false
+        FunStuff.Visible = false
+        RandomShit.Visible = true
+    end)
+    
+    UICorner_29.Parent = RandomShitButton
+    
+    ItemsButton.Name = "ItemsButton"
+    ItemsButton.Parent = ListBox
+    ItemsButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    ItemsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ItemsButton.BorderSizePixel = 0
+    ItemsButton.Position = UDim2.new(0.0409999378, 0, 0.0155951381, 0)
+    ItemsButton.Size = UDim2.new(0, 98, 0, 28)
+    ItemsButton.Font = Enum.Font.SourceSans
+    ItemsButton.Text = "Items"
+    ItemsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    ItemsButton.TextSize = 17.000
+    ItemsButton.MouseButton1Down:connect(function()
+        Items.Visible = true
+        Bypasses.Visible = false
+        FunStuff.Visible = false
+        RandomShit.Visible = false
+    end)
+    
+    UICorner_30.Parent = ItemsButton
+    
+    FunStuffButton.Name = "FunStuffButton"
+    FunStuffButton.Parent = ListBox
+    FunStuffButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    FunStuffButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    FunStuffButton.BorderSizePixel = 0
+    FunStuffButton.Position = UDim2.new(0.0409999378, 0, 0.175595149, 16)
+    FunStuffButton.Size = UDim2.new(0, 98, 0, 28)
+    FunStuffButton.Font = Enum.Font.SourceSans
+    FunStuffButton.Text = "Fun Stuff"
+    FunStuffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    FunStuffButton.TextSize = 17.000
+    FunStuffButton.MouseButton1Down:connect(function()
+        Items.Visible = false
+        Bypasses.Visible = false
+        FunStuff.Visible = true
+        RandomShit.Visible = false
+    end)
+    
+    UICorner_31.Parent = FunStuffButton
+    
+    RemoveGui.Name = "RemoveGui"
+    RemoveGui.Parent = Main
+    RemoveGui.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    RemoveGui.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RemoveGui.BorderSizePixel = 0
+    RemoveGui.Position = UDim2.new(0.948000014, 0, 0.00999999978, 0)
+    RemoveGui.Size = UDim2.new(0, 25, 0, 24)
+    RemoveGui.Font = Enum.Font.SourceSans
+    RemoveGui.Text = "X"
+    RemoveGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+    RemoveGui.TextSize = 20.000
+    RemoveGui.TextYAlignment = Enum.TextYAlignment.Bottom
+    RemoveGui.MouseButton1Down:connect(function()
+        game.Players.LocalPlayer.PlayerGui.SG:Destroy()
+    end)
+    
+    UICorner_32.Parent = RemoveGui
+    
+    ignore.Name = "ignore"
+    ignore.Parent = Main
+    ignore.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    ignore.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    ignore.BorderSizePixel = 0
+    ignore.Size = UDim2.new(0, 610, 0, 6)
+    ignore.Font = Enum.Font.SourceSans
+    ignore.Text = ""
+    ignore.TextColor3 = Color3.fromRGB(0, 0, 0)
+    ignore.TextSize = 14.000
+    
+    UICorner_33.Parent = ignore
     
     local main = Main
     local Opened = true
     
-    local PositionClosed = UDim2.new(0.338, 0,1, 30)
-    local PositionOpened = UDim2.new(0.338, 0,0.285, 0)
+    local PositionClosed = UDim2.new(0.34, 0,1, 5)
+    local PositionOpened = UDim2.new(0.34, 0,0.265, 0)
     UserInputService.InputBegan:connect(function(key, chat)
-    	if not chat and key.KeyCode == Enum.KeyCode.K then
-    		if Opened then
-    			main:TweenPosition((PositionClosed), "InOut", "Quart")
-    		else
-    			main:TweenPosition((PositionOpened), "InOut", "Quart")
-    		end
-    		Opened = not Opened
-    	end
+        if not chat and key.KeyCode == Enum.KeyCode.K then
+            if Opened then
+                main:TweenPosition((PositionClosed), "InOut", "Quart")
+            else
+                main:TweenPosition((PositionOpened), "InOut", "Quart")
+            end
+            Opened = not Opened
+        end
     end)
+    
+    getgenv().SG = SG
 return end
 return end
