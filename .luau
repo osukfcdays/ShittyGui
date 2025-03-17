@@ -3,7 +3,7 @@ if getgenv().zlfucker then
 end
 
 local lib = loadstring((dev and readfile("zlfucker/lib/init.luau")) or request({
-    Url = repo .. "init.luau"
+    Url = repo .. "lib/init.luau"
 }).Body)()
 gui = lib:CreateGui("zlfucker")
 getgenv().zlfucker = gui
