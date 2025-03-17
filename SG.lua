@@ -537,7 +537,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     local UICorner_16 = Instance.new("UICorner")
     local InfectAll = Instance.new("TextButton")
     local UICorner_17 = Instance.new("UICorner")
-    local NotFinishedKA = Instance.new("TextButton")
+    local KillAllZombies = Instance.new("TextButton")
     local UICorner_18 = Instance.new("UICorner")
     local LagServer = Instance.new("TextButton")
     local UICorner_19 = Instance.new("UICorner")
@@ -890,22 +890,37 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     UICorner_17.Parent = InfectAll
     
-    NotFinishedKA.Name = "NotFinishedKA"
-    NotFinishedKA.Parent = FunStuff
-    NotFinishedKA.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
-    NotFinishedKA.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    NotFinishedKA.BorderSizePixel = 0
-    NotFinishedKA.Position = UDim2.new(0.001, 5,0.3,6, 9)
-    NotFinishedKA.Size = UDim2.new(0, 475, 0, 28)
-    NotFinishedKA.Font = Enum.Font.SourceSans
-    NotFinishedKA.Text = "Not Finished"
-    NotFinishedKA.TextColor3 = Color3.fromRGB(255, 255, 255)
-    NotFinishedKA.TextSize = 15.000
-    NotFinishedKA.MouseButton1Down:connect(function()
-    warn("Not finished")
+    KillAllZombies.Name = "KillAllZombies"
+    KillAllZombies.Parent = FunStuff
+    KillAllZombies.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    KillAllZombies.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    KillAllZombies.BorderSizePixel = 0
+    KillAllZombies.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    KillAllZombies.Size = UDim2.new(0, 475, 0, 28)
+    KillAllZombies.Font = Enum.Font.SourceSans
+    KillAllZombies.Text = "Kill all Zombies"
+    KillAllZombies.TextColor3 = Color3.fromRGB(255, 255, 255)
+    KillAllZombies.TextSize = 15.000
+    KillAllZombies.MouseButton1Down:connect(function()
+        local remote = game:GetService("Players").LocalPlayer.Character.Pistol.GunScript_Server.InflictTarget
+        local lplr = game.Players.LocalPlayer
+    
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Team ~= lplr.Team and v.Character.PrimaryPart then
+                remote:FireServer(
+                    v.Character.Humanoid,
+                    v.Character.HumanoidRootPart,
+                    9e9,
+                    CFrame.new((lplr.Character.Humanoid.Torso.CFrame * CFrame.new(0, 1.5, 0)).Position, v.Character.Humanoid.RootPart.Position).LookVector,
+                    2,
+                    0,
+                    false
+                )
+            end
+        end
     end)
     
-    UICorner_18.Parent = NotFinishedKA
+    UICorner_18.Parent = KillAllZombies
     
     LagServer.Name = "LagServer"
     LagServer.Parent = FunStuff
@@ -919,10 +934,34 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     LagServer.TextColor3 = Color3.fromRGB(255, 255, 255)
     LagServer.TextSize = 15.000
     LagServer.MouseButton1Down:connect(function()
-        while true do
-            task.wait()
-            game:GetService("Players").LocalPlayer.Character.Pistol.Model.reload:FireServer()
+        local remotes = {}
+    
+        local plrs = game:GetService("Players")
+        
+        for _, v in plrs:GetPlayers() do
+            table.insert(remotes, v.Backpack:FindFirstChild("reload", true))
+            if v.Character then
+                table.insert(remotes, v.Character:FindFirstChild("reload", true))
             end
+        end
+        
+        local chr = plrs.LocalPlayer.Character
+        local pistol = chr.Pistol
+        local con
+        
+        game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+        
+        while true do
+            if pistol.Parent ~= chr then con:Disconnect() end
+            for _, v in remotes do
+                if v then
+                    coroutine.wrap(function()
+                        v:FireServer()
+                    end)()
+                end
+            end
+            task.wait(.03)
+        end
     end)
     
     UICorner_19.Parent = LagServer
