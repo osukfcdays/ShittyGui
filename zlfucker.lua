@@ -91,7 +91,7 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Name.Position = UDim2.new(0, 0, 0.0160854347, 0)
     Name.Size = UDim2.new(0, 610, 0, 25)
     Name.Font = Enum.Font.SourceSans
-    Name.Text = "    Elite Shitty Gui"
+    Name.Text = "    elite zlfucker"
     Name.TextColor3 = Color3.fromRGB(255, 255, 255)
     Name.TextSize = 20.000
     Name.TextXAlignment = Enum.TextXAlignment.Left
@@ -659,7 +659,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     Name.Position = UDim2.new(0, 0, 0.0160854347, 0)
     Name.Size = UDim2.new(0, 610, 0, 25)
     Name.Font = Enum.Font.SourceSans
-    Name.Text = "       Shitty Gui"
+    Name.Text = "       zlfucker"
     Name.TextColor3 = Color3.fromRGB(255, 255, 255)
     Name.TextSize = 20.000
     Name.TextXAlignment = Enum.TextXAlignment.Left
