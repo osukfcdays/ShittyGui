@@ -2,7 +2,7 @@ if getgenv().exampleLib then
     getgenv().exampleLib:Destruct()
 end
 
-local lib = loadstring(request({
+local lib = loadstring((isfolder("zlfucker") and readfile("zlfucker/lib/init.luau")) or request({
     Url = "https://raw.githubusercontent.com/osukfcdays/zlfucker/refs/heads/main/lib/init.luau"
 }).Body)()
 local gui = lib:CreateGui("example gui")
