@@ -181,14 +181,14 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Bypasses.Size = UDim2.new(0, 488, 0, 326)
     Bypasses.Visible = false
 
-    UIPadding_2.Parent = Bypasses
-    UIPadding_2.PaddingTop = UDim.new(0, 5)
-
     UIGridLayout_2.Parent = Bypasses
     UIGridLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout_2.CellPadding = UDim2.new(0, 5, 0, 4)
     UIGridLayout_2.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding_2.Parent = Bypasses
+    UIPadding_2.PaddingTop = UDim.new(0, 5)
     
     UICorner_6.Parent = Bypasses
     
@@ -234,14 +234,14 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     FunStuff.Size = UDim2.new(0, 488, 0, 326)
     FunStuff.Visible = false
 
-    UIPadding_3.Parent = Bypasses
-    UIPadding_3.PaddingTop = UDim.new(0, 5)
-
-    UIGridLayout_3.Parent = Bypasses
+    UIGridLayout_3.Parent = FunStuff
     UIGridLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout_3.CellPadding = UDim2.new(0, 5, 0, 4)
     UIGridLayout_3.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding_3.Parent = FunStuff
+    UIPadding_3.PaddingTop = UDim.new(0, 5)
     
     UICorner_8.Parent = FunStuff
     
@@ -313,14 +313,15 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Teleports.BorderSizePixel = 0
     Teleports.Size = UDim2.new(0, 488, 0, 326)
     Teleports.Visible = false
-    UIPadding_4.Parent = Bypasses
-    UIPadding_4.PaddingTop = UDim.new(0, 5)
 
-    UIGridLayout_4.Parent = Bypasses
+    UIGridLayout_4.Parent = Teleports
     UIGridLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
     UIGridLayout_4.CellPadding = UDim2.new(0, 5, 0, 4)
     UIGridLayout_4.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding_4.Parent = Teleports
+    UIPadding_4.PaddingTop = UDim.new(0, 5)
     
     UICorner_11.Parent = Teleports
     
