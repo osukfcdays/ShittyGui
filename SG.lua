@@ -57,6 +57,16 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     local UICorner_22 = Instance.new("UICorner")
     local UIStroke = Instance.new("UIStroke")
     local UIStroke_2 = Instance.new("UIStroke")
+    local UIPadding = Instance.new("UIPadding")
+    local UIGridLayout = Instance.new("UIGridLayout")
+    local UIPadding_2 = Instance.new("UIPadding")
+    local UIGridLayout_2 = Instance.new("UIGridLayout")
+    local UIPadding_3 = Instance.new("UIPadding")
+    local UIGridLayout_3 = Instance.new("UIGridLayout")
+    local UIPadding_4 = Instance.new("UIPadding")
+    local UIGridLayout_4 = Instance.new("UIGridLayout")
+    local UIPadding_5 = Instance.new("UIPadding")
+    local UIGridLayout_5 = Instance.new("UIGridLayout")
     
     ESG.Name = "ESG"
     ESG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -112,6 +122,15 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Teams.Size = UDim2.new(0, 488, 0, 326)
     Teams.Visible = false
     
+    UIGridLayout.Parent = Teams
+    UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding.Parent = Teams
+    UIPadding.PaddingTop = UDim.new(0, 5)
+
     UICorner_3.Parent = Teams
     
     BecomeScientist.Name = "BecomeScientist"
@@ -161,6 +180,15 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Bypasses.BorderSizePixel = 0
     Bypasses.Size = UDim2.new(0, 488, 0, 326)
     Bypasses.Visible = false
+
+    UIPadding_2.Parent = Bypasses
+    UIPadding_2.PaddingTop = UDim.new(0, 5)
+
+    UIGridLayout_2.Parent = Bypasses
+    UIGridLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_2.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_2.CellSize = UDim2.new(0, 475, 0, 28)
     
     UICorner_6.Parent = Bypasses
     
@@ -205,6 +233,15 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     FunStuff.BorderSizePixel = 0
     FunStuff.Size = UDim2.new(0, 488, 0, 326)
     FunStuff.Visible = false
+
+    UIPadding_3.Parent = Bypasses
+    UIPadding_3.PaddingTop = UDim.new(0, 5)
+
+    UIGridLayout_3.Parent = Bypasses
+    UIGridLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_3.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_3.CellSize = UDim2.new(0, 475, 0, 28)
     
     UICorner_8.Parent = FunStuff
     
@@ -276,6 +313,14 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Teleports.BorderSizePixel = 0
     Teleports.Size = UDim2.new(0, 488, 0, 326)
     Teleports.Visible = false
+    UIPadding_4.Parent = Bypasses
+    UIPadding_4.PaddingTop = UDim.new(0, 5)
+
+    UIGridLayout_4.Parent = Bypasses
+    UIGridLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_4.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_4.CellSize = UDim2.new(0, 475, 0, 28)
     
     UICorner_11.Parent = Teleports
     
@@ -445,6 +490,15 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     end)
     
     UICorner_20.Parent = FunStuffButton
+
+    UIGridLayout_5.Parent = ListBox
+    UIGridLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_5.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_5.CellSize = UDim2.new(0, 98, 0, 28)
+
+    UIPadding_5.Parent = ListBox
+    UIPadding_5.PaddingTop = UDim.new(0, 5)
     
     RemoveGui.Name = "RemoveGui"
     RemoveGui.Parent = Main
@@ -527,9 +581,9 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     local UICorner_11 = Instance.new("UICorner")
     local RemoveAntiExploits = Instance.new("TextButton")
     local UICorner_12 = Instance.new("UICorner")
-    local NotFinishedAGB = Instance.new("TextButton")
+    local AntiNoClipBypass = Instance.new("TextButton")
     local UICorner_13 = Instance.new("UICorner")
-    local RemoveZSHBarriers = Instance.new("TextButton")
+    local RemoveBarriers = Instance.new("TextButton")
     local UICorner_14 = Instance.new("UICorner")
     local FunStuff = Instance.new("Frame")
     local UICorner_15 = Instance.new("UICorner")
@@ -541,7 +595,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     local UICorner_18 = Instance.new("UICorner")
     local LagServer = Instance.new("TextButton")
     local UICorner_19 = Instance.new("UICorner")
-    local NotFinishedMA = Instance.new("TextButton")
+    local MeleeAllZombies = Instance.new("TextButton")
     local UICorner_20 = Instance.new("UICorner")
     local RandomShit = Instance.new("Frame")
     local UICorner_21 = Instance.new("UICorner")
@@ -571,6 +625,16 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     local UICorner_33 = Instance.new("UICorner")
     local UIStroke = Instance.new("UIStroke")
     local UIStroke_2 = Instance.new("UIStroke")
+    local UIPadding = Instance.new("UIPadding")
+    local UIGridLayout = Instance.new("UIGridLayout")
+    local UIPadding_2 = Instance.new("UIPadding")
+    local UIGridLayout_2 = Instance.new("UIGridLayout")
+    local UIPadding_3 = Instance.new("UIPadding")
+    local UIGridLayout_3 = Instance.new("UIGridLayout")
+    local UIPadding_4 = Instance.new("UIPadding")
+    local UIGridLayout_4 = Instance.new("UIGridLayout")
+    local UIPadding_5 = Instance.new("UIPadding")
+    local UIGridLayout_5 = Instance.new("UIGridLayout")
     
     SG.Name = "SG"
     SG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -625,6 +689,15 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     Items.BorderSizePixel = 0
     Items.Size = UDim2.new(0, 488, 0, 326)
     Items.Visible = false
+
+    UIGridLayout.Parent = Items
+    UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding.Parent = Items
+    UIPadding.PaddingTop = UDim.new(0, 5)
     
     UICorner_3.Parent = Items
     
@@ -738,6 +811,15 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     Bypasses.BorderSizePixel = 0
     Bypasses.Size = UDim2.new(0, 488, 0, 326)
     Bypasses.Visible = false
+
+    UIPadding_2.Parent = Bypasses
+    UIPadding_2.PaddingTop = UDim.new(0, 5)
+
+    UIGridLayout_2.Parent = Bypasses
+    UIGridLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_2.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_2.CellSize = UDim2.new(0, 475, 0, 28)
     
     UICorner_10.Parent = Bypasses
     
@@ -778,40 +860,83 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     UICorner_12.Parent = RemoveAntiExploits
     
-    NotFinishedAGB.Name = "NotFinishedAGB"
-    NotFinishedAGB.Parent = Bypasses
-    NotFinishedAGB.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
-    NotFinishedAGB.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    NotFinishedAGB.BorderSizePixel = 0
-    NotFinishedAGB.Position = UDim2.new(0.001, 5,0.21, 3)
-    NotFinishedAGB.Size = UDim2.new(0, 475, 0, 28)
-    NotFinishedAGB.Font = Enum.Font.SourceSans
-    NotFinishedAGB.Text = "Not Finished"
-    NotFinishedAGB.TextColor3 = Color3.fromRGB(255, 255, 255)
-    NotFinishedAGB.TextSize = 15.000
-    NotFinishedAGB.MouseButton1Down:connect(function()
-        warn("Not finished")
+    AntiNoClipBypass.Name = "AntiNoClipBypass"
+    AntiNoClipBypass.Parent = Bypasses
+    AntiNoClipBypass.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    AntiNoClipBypass.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    AntiNoClipBypass.BorderSizePixel = 0
+    AntiNoClipBypass.Position = UDim2.new(0.001, 5,0.21, 3)
+    AntiNoClipBypass.Size = UDim2.new(0, 475, 0, 28)
+    AntiNoClipBypass.Font = Enum.Font.SourceSans
+    AntiNoClipBypass.Text = "NoClip Bypass"
+    AntiNoClipBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
+    AntiNoClipBypass.TextSize = 15.000
+    AntiNoClipBypass.MouseButton1Down:connect(function()
+        local runServ = game:GetService("RunService")
+
+        local lplr = game:GetService("Players").LocalPlayer
+        local chr = lplr.Character
+        
+        local root = chr.HumanoidRootPart
+        local limbs = {}
+        
+        chr.Archivable = true
+        local clone = chr:Clone()
+        clone.Parent = chr
+        
+        for _, v in clone:GetDescendants() do
+            if v:IsA("BasePart") or v.ClassName == "Decal" then
+                v.Transparency = 1
+            end
+        end
+        
+        for _, v in {clone, chr} do
+            for _, v in v:GetChildren() do
+                if v:IsA("BasePart") then
+                    table.insert(limbs, v)
+                end
+            end
+        end
+        
+        workspace.CurrentCamera.CameraSubject = clone
+        local con
+        con = runServ.PreRender:Connect(function()
+            if chr and chr.Parent == workspace then
+                clone.Humanoid:Move(chr.Humanoid.MoveDirection)
+                clone.Humanoid:ChangeState(chr.Humanoid:GetState())
+                root.CFrame = clone.HumanoidRootPart.CFrame
+                root.Velocity = clone.HumanoidRootPart.Velocity
+                for _, v in limbs do
+                    v.CanCollide = false
+                end
+            else
+                con:Disconnect()
+            end
+        end)
     end)
     
-    UICorner_13.Parent = NotFinishedAGB
+    UICorner_13.Parent = AntiNoClipBypass
     
-    RemoveZSHBarriers.Name = "RemoveZSHBarriers"
-    RemoveZSHBarriers.Parent = Bypasses
-    RemoveZSHBarriers.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
-    RemoveZSHBarriers.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    RemoveZSHBarriers.BorderSizePixel = 0
-    RemoveZSHBarriers.Position = UDim2.new(0.001, 5,0.3,6, 9)
-    RemoveZSHBarriers.Size = UDim2.new(0, 475, 0, 28)
-    RemoveZSHBarriers.Font = Enum.Font.SourceSans
-    RemoveZSHBarriers.Text = "Remove Zombie/Human Barriers"
-    RemoveZSHBarriers.TextColor3 = Color3.fromRGB(255, 255, 255)
-    RemoveZSHBarriers.TextSize = 15.000
-    RemoveZSHBarriers.MouseButton1Down:connect(function()
+    RemoveBarriers.Name = "RemoveBarriers"
+    RemoveBarriers.Parent = Bypasses
+    RemoveBarriers.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    RemoveBarriers.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    RemoveBarriers.BorderSizePixel = 0
+    RemoveBarriers.Position = UDim2.new(0.001, 5,0.3,6, 9)
+    RemoveBarriers.Size = UDim2.new(0, 475, 0, 28)
+    RemoveBarriers.Font = Enum.Font.SourceSans
+    RemoveBarriers.Text = "Remove Barriers"
+    RemoveBarriers.TextColor3 = Color3.fromRGB(255, 255, 255)
+    RemoveBarriers.TextSize = 15.000
+    RemoveBarriers.MouseButton1Down:connect(function()
         game.workspace.AntiGlitch.AntiZombie:Destroy()
         game.workspace.ZombieBlockers.Blocker:Destroy()
+        for i,v in pairs(workspace["Map Wall"].BaseWalls:GetChildren()) do
+            v:Destroy()
+        end
     end)
     
-    UICorner_14.Parent = RemoveZSHBarriers
+    UICorner_14.Parent = RemoveBarriers
     
     FunStuff.Name = "FunStuff"
     FunStuff.Parent = GuiSections
@@ -822,6 +947,15 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     FunStuff.Size = UDim2.new(0, 488, 0, 326)
     FunStuff.Visible = false
     
+    UIGridLayout_3.Parent = FunStuff
+    UIGridLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_3.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_3.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding_3.Parent = FunStuff
+    UIPadding_3.PaddingTop = UDim.new(0, 5)
+
     UICorner_15.Parent = FunStuff
     
     GodGun.Name = "GodGun"
@@ -930,7 +1064,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     LagServer.Position = UDim2.new(0.001, 5,0.4, 7, 9)
     LagServer.Size = UDim2.new(0, 475, 0, 28)
     LagServer.Font = Enum.Font.SourceSans
-    LagServer.Text = "LagServer"
+    LagServer.Text = "Lag Server"
     LagServer.TextColor3 = Color3.fromRGB(255, 255, 255)
     LagServer.TextSize = 15.000
     LagServer.MouseButton1Down:connect(function()
@@ -966,22 +1100,34 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     UICorner_19.Parent = LagServer
     
-    NotFinishedMA.Name = "Not FinishedMA"
-    NotFinishedMA.Parent = FunStuff
-    NotFinishedMA.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
-    NotFinishedMA.BorderColor3 = Color3.fromRGB(0, 0, 0)
-    NotFinishedMA.BorderSizePixel = 0
-    NotFinishedMA.Position = UDim2.new(0.001, 5,0.21, 3)
-    NotFinishedMA.Size = UDim2.new(0, 475, 0, 28)
-    NotFinishedMA.Font = Enum.Font.SourceSans
-    NotFinishedMA.Text = "Not Finished"
-    NotFinishedMA.TextColor3 = Color3.fromRGB(255, 255, 255)
-    NotFinishedMA.TextSize = 15.000
-    NotFinishedMA.MouseButton1Down:connect(function()
-        warn("Not finished")
+    MeleeAllZombies.Name = "MeleeAllZombies"
+    MeleeAllZombies.Parent = FunStuff
+    MeleeAllZombies.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    MeleeAllZombies.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    MeleeAllZombies.BorderSizePixel = 0
+    MeleeAllZombies.Position = UDim2.new(0.001, 5,0.21, 3)
+    MeleeAllZombies.Size = UDim2.new(0, 475, 0, 28)
+    MeleeAllZombies.Font = Enum.Font.SourceSans
+    MeleeAllZombies.Text = "Melee All"
+    MeleeAllZombies.TextColor3 = Color3.fromRGB(255, 255, 255)
+    MeleeAllZombies.TextSize = 15.000
+    MeleeAllZombies.MouseButton1Down:connect(function()
+        local lplr = game.Players.LocalPlayer
+        local melee = lplr.Backpack:FindFirstChild("Settings", true) or lplr.Character:FindFirstChild("Settings", true)
+        melee = (melee and melee.Parent) or melee
+        print(melee)
+        
+        melee.Activated:Connect(function()
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Team == Teams.Zombie and v.Character.PrimaryPart then
+             firetouchinterest(melee.Handle, v.Character.PrimaryPart, 0)
+             firetouchinterest(melee.Handle, v.Character.PrimaryPart, 1)
+            end
+        end
+        end)
     end)
     
-    UICorner_20.Parent = NotFinishedMA
+    UICorner_20.Parent = MeleeAllZombies
     
     RandomShit.Name = "RandomShit"
     RandomShit.Parent = GuiSections
@@ -991,6 +1137,15 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     RandomShit.BorderSizePixel = 0
     RandomShit.Size = UDim2.new(0, 488, 0, 326)
     RandomShit.Visible = false
+
+    UIGridLayout_4.Parent = RandomShit
+    UIGridLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_4.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_4.CellSize = UDim2.new(0, 475, 0, 28)
+
+    UIPadding_4.Parent = RandomShit
+    UIPadding_4.PaddingTop = UDim.new(0, 5)
     
     UICorner_21.Parent = RandomShit
     
@@ -1193,6 +1348,15 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     
     UICorner_31.Parent = FunStuffButton
     
+    UIGridLayout_5.Parent = ListBox
+    UIGridLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIGridLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout_5.CellPadding = UDim2.new(0, 5, 0, 4)
+    UIGridLayout_5.CellSize = UDim2.new(0, 98, 0, 28)
+    
+    UIPadding_5.Parent = ListBox
+    UIPadding_5.PaddingTop = UDim.new(0, 5)
+
     RemoveGui.Name = "RemoveGui"
     RemoveGui.Parent = Main
     RemoveGui.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
