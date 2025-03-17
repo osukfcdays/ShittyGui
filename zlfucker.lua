@@ -3,13 +3,13 @@ if not game.Loaded then
 end
 
 if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
-    if getgenv().ESG then
-        getgenv().ESG:Destroy()
-        getgenv().ESG = nil 
+    if getgenv().EZLF then
+        getgenv().EZLF:Destroy()
+        getgenv().EZLF = nil 
     end
     
     local UserInputService = game:GetService("UserInputService")
-    local ESG = Instance.new("ScreenGui")
+    local EZLF = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local Name = Instance.new("TextLabel")
     local UICorner = Instance.new("UICorner")
@@ -68,13 +68,13 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     local UIPadding_5 = Instance.new("UIPadding")
     local UIGridLayout_5 = Instance.new("UIGridLayout")
     
-    ESG.Name = "ESG"
-    ESG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-    ESG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    ESG.ResetOnSpawn = false
+    EZLF.Name = "EZLF"
+    EZLF.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    EZLF.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    EZLF.ResetOnSpawn = false
     
     Main.Name = "Main"
-    Main.Parent = ESG
+    Main.Parent = EZLF
     Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Main.BorderSizePixel = 0
@@ -91,7 +91,7 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     Name.Position = UDim2.new(0, 0, 0.0160854347, 0)
     Name.Size = UDim2.new(0, 610, 0, 25)
     Name.Font = Enum.Font.SourceSans
-    Name.Text = "    elite zlfucker"
+    Name.Text = "    elite zl fucker"
     Name.TextColor3 = Color3.fromRGB(255, 255, 255)
     Name.TextSize = 20.000
     Name.TextXAlignment = Enum.TextXAlignment.Left
@@ -513,7 +513,7 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
     RemoveGui.TextSize = 20.000
     RemoveGui.TextYAlignment = Enum.TextYAlignment.Bottom
     RemoveGui.MouseButton1Down:connect(function()
-        game.Players.LocalPlayer.PlayerGui.ESG:Destroy()
+        game.Players.LocalPlayer.PlayerGui.EZLF:Destroy()
     end)
     
     UICorner_21.Parent = RemoveGui
@@ -547,15 +547,15 @@ if game.PlaceId == 8426538932 and game.PlaceId ~= 6741970382 then
         end
     end)
     
-    getgenv().ESG = ESG
+    getgenv().EZLF = EZLF
 else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
-    if getgenv().SG then
-        getgenv().SG:Destroy()
-        getgenv().SG = nil 
+    if getgenv().ZLF then
+        getgenv().ZLF:Destroy()
+        getgenv().ZLF = nil 
     end
     
     local UserInputService = game:GetService("UserInputService")
-    local SG = Instance.new("ScreenGui")
+    local ZLF = Instance.new("ScreenGui")
     local Main = Instance.new("Frame")
     local Name = Instance.new("TextLabel")
     local UICorner = Instance.new("UICorner")
@@ -636,13 +636,13 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     local UIPadding_5 = Instance.new("UIPadding")
     local UIGridLayout_5 = Instance.new("UIGridLayout")
     
-    SG.Name = "SG"
-    SG.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-    SG.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    SG.ResetOnSpawn = false
+    ZLF.Name = "ZLF"
+    ZLF.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    ZLF.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    ZLF.ResetOnSpawn = false
     
     Main.Name = "Main"
-    Main.Parent = SG
+    Main.Parent = ZLF
     Main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
     Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
     Main.BorderSizePixel = 0
@@ -659,7 +659,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     Name.Position = UDim2.new(0, 0, 0.0160854347, 0)
     Name.Size = UDim2.new(0, 610, 0, 25)
     Name.Font = Enum.Font.SourceSans
-    Name.Text = "       zlfucker"
+    Name.Text = "          zlfucker"
     Name.TextColor3 = Color3.fromRGB(255, 255, 255)
     Name.TextSize = 20.000
     Name.TextXAlignment = Enum.TextXAlignment.Left
@@ -1370,7 +1370,7 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
     RemoveGui.TextSize = 20.000
     RemoveGui.TextYAlignment = Enum.TextYAlignment.Bottom
     RemoveGui.MouseButton1Down:connect(function()
-        game.Players.LocalPlayer.PlayerGui.SG:Destroy()
+        game.Players.LocalPlayer.PlayerGui.ZLF:Destroy()
     end)
     
     UICorner_32.Parent = RemoveGui
@@ -1404,6 +1404,6 @@ else if game.PlaceId == 6741970382 and game.PlaceId ~= 8426538932 then
         end
     end)
     
-    getgenv().SG = SG
+    getgenv().ZLF = ZLF
 return end
 return end
