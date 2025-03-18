@@ -50,21 +50,23 @@ if not dev then
 end
 
 for i, v in index do
-    local str = "places/" .. i .. ".luau"
-    local s, r
+    if game.CreatorId == v or game.PlaceId == v then
+        local str = "places/" .. i .. ".luau"
+        local s, r
 
-    if dev then
-        s, r = pcall(readfile, "zlfucker/" .. str)
-    else 
-        s, r = pcall(request, {
-            Url = repo .. str
-        })
-    end
+        if dev then
+            s, r = pcall(readfile, "zlfucker/" .. str)
+        else 
+            s, r = pcall(request, {
+                Url = repo .. str
+            })
+        end
 
-    if s then
-        if r.StatusCode and r.StatusCode ~= 200 then continue end
-        loadstring((dev and r) or r.Body)()
-        return
+        if s then
+            if r.StatusCode and r.StatusCode ~= 200 then continue end
+            loadstring((dev and r) or r.Body)()
+            return
+        end
     end
 end
 
