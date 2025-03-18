@@ -3,7 +3,7 @@ if dev then
     export_file = "zlfucker/lib/export.rbxm"
     lib = loadfile("zlfucker/lib/gui.luau")()
 else
-    local id = getId()
+    local id = genId()
     writefile(id, request({
         Url = repo .. "lib/export.rbxm"
     }).Body)
