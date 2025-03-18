@@ -54,6 +54,33 @@ function lib:CreateGui(name)
 
     sFrame.top.TextLabel.Text = name
 
+    local queueNotifs = {}
+    local notifIndx = 0
+    local manageNotif = function()
+        sFrame.content.notif.msg.title.Text = queueNotifs[1][2] or "ZLFucker"
+        sFrame.content.notif.msg.desc.Text = queueNotifs[1][1] or "no desc was passed"
+        sFrame.content.notif.Visible = true
+    end
+
+    function gFuncs:Notify(desc, tit)
+        table.insert(queueNotifs, {
+            desc,
+            tit
+        })
+        manageNotif()
+    end
+
+    sFrame.content.notif.Visible = false
+    table.insert(cons, sFrame.content.notif.msg.btn.MouseButton1Click:Connect(function()
+        sFrame.content.notif.Visible = false
+        if queueNotifs[1] then
+            table.remove(queueNotifs, 1)
+            if queueNotifs[1] then
+                manageNotif()
+            end
+        end
+    end))
+
     function gFuncs:CreateTab(name)
         local tFr = assets.Frame.content.padding.stuf:Clone()
         local tBtn = assets.Frame.content.tabs.TextButton:Clone()

@@ -1,8 +1,3 @@
-local httpServ = cloneref(game:GetService("HttpService"))
-local genId = newcclosure(function()
-    return httpServ.GenerateGUID(httpServ, false)
-end)
-
 local lib
 if dev then
     export_file = "zlfucker/lib/export.rbxm"

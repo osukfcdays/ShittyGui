@@ -39,7 +39,7 @@ tabs.Player:CreateButton("Disable Anticheat Mitigations", function()
 end)
 
 do
-    local godGunConfig = {
+    local godGun = {
         FireRate = 0.03,
         Auto = true,
         AmmoPerClip = math.huge,
@@ -51,9 +51,9 @@ do
         BulletSpeed = 9e9,
         Piercing = 1
     }
-    local noCoolDownGunConfig = table.clone(godGunConfig)
-    noCoolDownGunConfig.Auto = false
-    noCoolDownGunConfig.FireRate = 0
+    local spamGun = table.clone(godGun)
+    spamGun.Auto = false
+    spamGun.FireRate = 0
 
     local modGun = function(conf)
         local gun = getGun()
@@ -73,8 +73,8 @@ do
         end
     end
 
-    tabs.Player:CreateButton("PUTTHEGUNDOWN Gun", modGun, noCoolDownGunConfig)
-    tabs.Player:CreateButton("God Gun", modGun, godGunConfig)
+    tabs.Player:CreateButton("Spam Gun", modGun, spamGun)
+    tabs.Player:CreateButton("God Gun", modGun, godGun)
 end
 
 do
