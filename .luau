@@ -4,6 +4,11 @@ if getgenv().zlfucker then
     getgenv().zlfucker:Destruct()
 end
 
+local httpServ : HttpService = cloneref(game:GetService("HttpService"))
+genId = newcclosure(function()
+    return httpServ.GenerateGUID(httpServ, false)
+end)
+
 local lib = loadstring((dev and readfile("zlfucker/lib/init.luau")) or request({
     Url = repo .. "lib/init.luau"
 }).Body)()
@@ -11,14 +16,10 @@ local guiTitle = "ZLFucker"
 gui = lib:CreateGui(guiTitle)
 getgenv().zlfucker = gui
 
-local httpServ : HttpService = cloneref(game:GetService("HttpService"))
+
 local index = httpServ:JSONDecode((dev and readfile("zlfucker/places/index.json")) or request({
     Url = repo .. "places/index.json"
 }).Body)
-
-genId = newcclosure(function()
-    return httpServ.GenerateGUID(httpServ, false)
-end)
 
 assert = newcclosure(function(i, msg)
     if not i then
@@ -33,7 +34,7 @@ if not dev then
     }).Body
     gui:Notify("join our discord 🙏: discord.gg/" .. invite)
 
-    request({
+    coroutine.wrap(request)({
         Url = "http://127.0.0.1:6463/rpc?v=1",
         Method = "POST",
         Headers = {
@@ -60,8 +61,8 @@ for i, v in index do
         })
     end
 
-    if s then
-        coroutine.wrap(loadstring)((dev and r) or r.Body)()
+    if s and r.StatusCode == 200 then
+        loadstring((dev and r) or r.Body)()
         return
     end
 end
