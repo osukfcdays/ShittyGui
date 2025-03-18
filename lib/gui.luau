@@ -75,14 +75,19 @@ function lib:CreateGui(name)
 
         local tFuncs = {}
 
-        function tFuncs:CreateButton(name, callback)
+        function tFuncs:CreateButton(name, callback, ...)
+            local args = {...}
             local btn : TextButton = assets.Frame.content.padding.stuf.TextButton:Clone()
             local bFuncs = {}
 
             btn.Text = name
             btn.Parent = tFr
             
-            table.insert(cons, btn.MouseButton1Click:Connect(callback))
+            if callback then
+                table.insert(cons, btn.MouseButton1Click:Connect(function()
+                    coroutine.wrap(callback)(unpack(args))
+                end))
+            end
 
             -- encryptObjNames(btn)
             return bFuncs

@@ -12,6 +12,18 @@ local index = cloneref(game:GetService("HttpService")):JSONDecode((dev and readf
     Url = repo .. "places/index.json"
 }).Body)
 
+local starGui = cloneref(game:GetService("StarterGui"))
+assert = newcclosure(function(i, msg)
+    if not i then
+        starGui:SetCore("SendNotification", {
+            Title = "zlfucker";
+            Text = msg or tostring(i);
+            Duration = 10;
+        })
+        error(msg) -- i dont know of any other way to yield the script, other then a wait which is hidious
+    end
+end)
+
 -- table.foreach(index, print)
 for i, v in index do
     local str = "places/" .. i .. ".luau"
