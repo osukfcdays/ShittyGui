@@ -1,3 +1,5 @@
+local emptyFunc = function() end
+local cons = gui.cons
 local tabs = {
     Player = true,
     Server = true,
@@ -11,23 +13,51 @@ end
 
 local plrs : Players = cloneref(game:GetService("Players"))
 local starGui : StarterGui = cloneref(game:GetService("StarterGui"))
+local starPlr : StarterPlayer = cloneref(game:GetService("StarterPlayer"))
+local rStor : ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"))
+local runServ : RunService = cloneref(game:GetService("RunService"))
+
+local lplr = plrs.LocalPlayer
+local pStats = lplr:WaitForChild("stats")
 
 local getGun = function()
-    local res = plrs.LocalPlayer.Backpack:FindFirstChild("Gun", true) or plrs.LocalPlayer.Character:FindFirstChild("Gun", true)
+    local res = lplr.Backpack:FindFirstChild("Gun", true) or lplr.Character:FindFirstChild("Gun", true)
     return ((res and res.Parent) or nil)
 end
 
 local getKnife = function()
-    local res = plrs.LocalPlayer.Backpack:FindFirstChild("SecondaryEquipment", true) or plrs.LocalPlayer.Character:FindFirstChild("SecondaryEquipment", true)
+    local res = lplr.Backpack:FindFirstChild("SecondaryEquipment", true) or lplr.Character:FindFirstChild("SecondaryEquipment", true)
     return ((res and res.Parent) or nil)
 end
 
-tabs.Player:CreateButton("Disable Anticheat Mitigations", function()
-    for _, c in getconnections(plrs.LocalPlayer.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
-        c:Disable()
+do
+    -- tabs.Player:CreateButton("Disable Client Anticheat", function()
+    -- for _, c in getconnections(lplr.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
+    --     c:Disable()
+    -- end
+    local blacklistedScripts = {
+        "States",
+        "Anti-Exploits"
+    }
+
+    if lplr.Character then
+        for _, v in blacklistedScripts do
+            if lplr.Character:FindFirstChild(v) then
+                lplr.Character[v]:Destroy()
+            end
+        end
     end
-    
-    for _, v in {starGui:FindFirstChild("PlayerLocalScripts(ReOnSp)"), plrs.LocalPlayer.PlayerGui:FindFirstChild("PlayerLocalScripts(ReOnSp)")} do
+    table.insert(cons, lplr.CharacterAdded:Connect(function(chr)
+        for _, v in blacklistedScripts do
+            chr:WaitForChild(v):Destroy()
+        end
+    end))
+
+    -- end)
+end
+
+tabs.Player:CreateButton("Destroy Zones", function()
+    for _, v in {starGui:FindFirstChild("PlayerLocalScripts(ReOnSp)"), lplr.PlayerGui:FindFirstChild("PlayerLocalScripts(ReOnSp)")} do
         if v then
             for _, v in v:GetChildren() do
                 if v.ClassName == "LocalScript" then
@@ -36,6 +66,10 @@ tabs.Player:CreateButton("Disable Anticheat Mitigations", function()
             end
         end
     end
+
+    workspace.AntiGlitch:Destroy()
+    workspace.ZombieBlockers:Destroy()
+    workspace["Map Wall"].BaseWalls:Destroy()
 end)
 
 do
@@ -67,9 +101,9 @@ do
             mod[i] = v
         end
 
-        if gun.Parent == plrs.LocalPlayer.Character then
-            plrs.LocalPlayer.Character.Humanoid:UnequipTools()
-            plrs.LocalPlayer.Character.Humanoid:EquipTool(gun)
+        if gun.Parent == lplr.Character then
+            lplr.Character.Humanoid:UnequipTools()
+            lplr.Character.Humanoid:EquipTool(gun)
         end
     end
 
@@ -77,6 +111,10 @@ do
     tabs.Player:CreateButton("God Gun", modGun, godGun)
 end
 
+local itemFuncs = {
+    Virus = emptyFunc,
+    Cure = emptyFunc
+}
 do
     local itemRemotes = {
         Virus = game:GetService("ReplicatedStorage").Remotes.GiveVirus,
@@ -85,12 +123,56 @@ do
 
     for i, v in itemRemotes do
         tabs.Items:CreateButton("Give " .. i, v.FireServer, v)
+
+        itemFuncs[i] = function()
+            -- if not plrs.LocalPlayer.Backpack:FindFirstChild(i) then
+                v.FireServer(v)
+            -- end
+            local res = plrs.LocalPlayer.Backpack:WaitForChild(i, 1)
+            if res then
+                plrs.LocalPlayer.Backpack[i].Name ..= "_used"
+                res:WaitForChild("UseSelf"):FireServer()
+            else
+                itemFuncs[i]()
+            end
+        end
+        tabs.Player:CreateButton("Use " .. i, itemFuncs[i])
     end
 
-    for i, v in itemRemotes do
-        tabs.Player:CreateButton(i .. " Me", function()
-            v.FireServer(v)
-            plrs.LocalPlayer.Backpack:WaitForChild(i):WaitForChild("UseSelf"):FireServer()
-        end)
-    end
+    local tCons = {}
+    tabs.Extra:CreateToggle("Cure Autofarm", function(callback)
+        if callback then
+            local changed = true
+            table.insert(tCons, pStats.Credits:GetPropertyChangedSignal("Value"):Connect(function()
+                changed = true
+            end))
+
+            table.insert(tCons, runServ.PreRender:Connect(function()
+                if changed then
+                    changed = false
+                    itemFuncs.Cure()
+                end
+            end))
+
+            for _, v in tCons do
+                table.insert(cons, v)
+            end
+        elseif #tCons > 0 then
+            for _, v in tCons do
+                v:Disconnect()
+            end
+            table.clear(tCons)
+        end
+    end)
+end
+
+do
+    tabs.Extra:CreateButton("Unlock Gamepass Machines", function()
+        for _, v in rStor.LocalFolder:GetChildren() do
+            if v.ClassName == "Model" then
+                v.Parent = workspace
+            end
+        end
+        gui:Notify("Gamepass machines are found in spawn room")
+    end)
 end

@@ -120,6 +120,27 @@ function lib:CreateGui(name)
             return bFuncs
         end
 
+        function tFuncs:CreateToggle(name, callback, ...)
+            local args = {...}
+            local btn : TextButton = assets.Frame.content.padding.stuf.TextButton:Clone()
+            local bFuncs = {}
+
+            btn.Text = "[Disabled] " .. name
+            btn.Parent = tFr
+            
+            if callback then
+                bFuncs.Enabled = false
+                table.insert(cons, btn.MouseButton1Click:Connect(function()
+                    bFuncs.Enabled = not bFuncs.Enabled
+                    btn.Text = (bFuncs.Enabled and "[Enabled] " .. name) or "[Disabled] " .. name
+                    coroutine.wrap(callback)(bFuncs.Enabled, unpack(args))
+                end))
+            end
+
+            -- encryptObjNames(btn)
+            return bFuncs
+        end
+
         tFr.Parent = ((#tabs <= 0) and sFrame.content.padding) or nil
         tFr.Visible = (#tabs <= 0)
         table.insert(tabs, tFr)
@@ -129,7 +150,9 @@ function lib:CreateGui(name)
     function gFuncs:Destruct()
         sGui:Destroy()
         for _, v in cons do
-            v:Disconnect()
+            if v then
+                v:Disconnect()
+            end
         end
     end
 

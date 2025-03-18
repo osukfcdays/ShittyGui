@@ -61,7 +61,8 @@ for i, v in index do
         })
     end
 
-    if s and r.StatusCode == 200 then
+    if s then
+        if r.StatusCode and r.StatusCode ~= 200 then continue end
         loadstring((dev and r) or r.Body)()
         return
     end
