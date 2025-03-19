@@ -92,10 +92,10 @@ do
 
     local modGun = function(conf)
         local gun = getGun()
-        gui:Notify("You dont have a gun")
+        assert(gun, "You dont have a gun")
 
         local mod = gun:FindFirstChild("Setting")
-        gui:Notify(mod, "Your gun is broken")
+        assert(mod, "Your gun is broken")
         mod = require(mod)
 
         for i, v in conf do
