@@ -177,3 +177,131 @@ do
         gui:Notify("Gamepass Machines can be found in Spawn")
     end)
 end
+
+tabs.Extra:CreateToggle("Ragdoll", function()
+    local Event = rStor.Remotes:FindFirstChild("ChangeState")
+    Event:FireServer("Ragdoll")
+end)
+
+tabs.Server:CreateButton("Infect Humans", function()
+    local Teams = game:GetService("Teams") 
+    local plrs = game:GetService("Players") 
+    local lplr = plrs.LocalPlayer
+    if lplr.Team == Teams.Zombie and not lplr.Character:FindFirstChild("Infect") then gui:Notify("Equip your Infect tool") end
+    if lplr.Team == Teams.Zombie then 
+        lplr.Character.Infect.Activated:Connect(function()
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Team ~= lplr.Team and v.Character.PrimaryPart then
+            firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 0)
+            firetouchinterest(lplr.Character.RightHand, v.Character.PrimaryPart, 1)
+        end
+        end
+        end)
+    else
+        gui:Notify("You need to be a Zombie")
+    end
+end)
+
+tabs.Server:CreateButton("Lag Server", function(callback)
+    local plrs = game:GetService("Players")
+    local lplr = plrs.LocalPlayer
+    local teams = game:GetService("Teams")
+        
+    if lplr.Team == teams.Human then
+        local remotes = {}
+        
+        local gun = game.Players.LocalPlayer.Character:FindFirstChild("Gun", true) 
+        gun = (gun and gun.Parent) or gun
+        
+        if not gun then gui:Notify("Equip your Gun") end
+        
+        for _, v in plrs:GetPlayers() do
+            table.insert(remotes, v.Backpack:FindFirstChild("reload", true))
+            if v.Character then
+                table.insert(remotes, v.Character:FindFirstChild("reload", true))
+            end
+        end
+        local chr = plrs.LocalPlayer.Character
+        local pistol = gun
+        local con
+        
+        game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+    
+        while true do
+            if pistol.Parent ~= chr then con:Disconnect() end
+            for _, v in remotes do
+                if v then
+                    coroutine.wrap(function()
+                        v:FireServer()
+                    end)()
+                end
+            end
+            task.wait(.03)
+        end
+    else
+        gui:Notify("You need to be human")
+    end
+end)
+
+tabs.Server:CreateButton("God Humans", function()
+    local Teams = game:GetService("Teams") 
+    local plrs = game:GetService("Players") 
+    local lplr = plrs.LocalPlayer
+    local remote = plrs:FindFirstChild("InflictTarget", true) or workspace:FindFirstChild("InflictTarget", true)
+
+    if lplr.Team == Teams.Zombie and remote then
+        for _, v in game.Players:GetPlayers() do
+            if v.Character and v.Character.PrimaryPart then
+                remote:FireServer(
+                    v.Character.Humanoid,
+                    v.Character.HumanoidRootPart,
+                    tonumber("nan"),
+                    Vector3.zero,
+                    2,
+                    0,
+                    false
+                )
+            end
+        end
+    else
+        gui:Notify("You need to be a Zombie")
+    end
+end)
+
+tabs.Server:CreateButton("God Zombies", function()
+    local Teams = game:GetService("Teams") 
+    local plrs = game:GetService("Players") 
+    local lplr = plrs.LocalPlayer
+    local remote = plrs:FindFirstChild("InflictTarget", true) or workspace:FindFirstChild("InflictTarget", true)
+
+    if lplr.Team == Teams.Human and remote then
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Team ~= lplr.Team and v.Character.PrimaryPart then
+                remote:FireServer(
+                    v.Character.Humanoid,
+                    v.Character.HumanoidRootPart,
+                    tonumber("nan"),
+                    CFrame.new((lplr.Character.Humanoid.Torso.CFrame * CFrame.new(0, 1.5, 0)).Position, v.Character.Humanoid.RootPart.Position).LookVector,
+                    2,
+                    0,
+                    false
+                )
+            end
+        end
+
+        for _, v in game.workspace.Zombies:GetChildren() do
+            if v.Humanoid and v.HumanoidRootPart then
+                remote:FireServer(
+                    v.Humanoid,
+                    v.HumanoidRootPart,
+                    tonumber("nan"),
+                    2,
+                    0,
+                    false
+                )
+            end
+        end
+    else
+        gui:Notify("You need to be a Human") 
+    end
+end)
