@@ -222,7 +222,7 @@ tabs.Server:CreateButton("Kill all Zombies", function()
 end)
 
 tabs.Server:CreateButton("Lag Server", function(callback)   
-    if lplr.Team == teams.Human then
+    if lplr.Team == Teams.Human then
         local remotes = {}
         
         local gun = game.Players.LocalPlayer.Character:FindFirstChild("Gun", true) 
