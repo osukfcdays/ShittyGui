@@ -31,12 +31,6 @@ local getKnife = function()
     return ((res and res.Parent) or nil)
 end
 
---[[tabs.Player:CreateButton("Walkspeed Bypass", function()
-    for _, c in getconnections(lplr.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
-        c:Disable()
-    end
-end)]]
-
 do
     local blacklistedScripts = {
         "States",
@@ -71,6 +65,12 @@ tabs.Player:CreateButton("Destroy Zones", function()
     workspace.AntiGlitch:Destroy()
     workspace.ZombieBlockers:Destroy()
     workspace["Map Wall"].BaseWalls:Destroy()
+end)
+
+tabs.Player:CreateButton("Walkspeed Bypass", function()
+    for _, c in getconnections(lplr.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
+        c:Disable()
+    end
 end)
 
 do
