@@ -218,6 +218,7 @@ tabs.Server:CreateButton("Kill all Zombies", function()
         end
     else
         gui:Notify("You need to be Human")
+    end
 end)
 
 tabs.Server:CreateButton("Lag Server", function(callback)   
