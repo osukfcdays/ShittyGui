@@ -184,9 +184,6 @@ tabs.Extra:CreateToggle("Ragdoll", function()
 end)
 
 tabs.Server:CreateButton("Infect Humans", function()
-    local Teams = game:GetService("Teams") 
-    local plrs = game:GetService("Players") 
-    local lplr = plrs.LocalPlayer
     if lplr.Team == Teams.Zombie and not lplr.Character:FindFirstChild("Infect") then gui:Notify("Equip your Infect tool") end
     if lplr.Team == Teams.Zombie then 
         lplr.Character.Infect.Activated:Connect(function()
@@ -202,11 +199,28 @@ tabs.Server:CreateButton("Infect Humans", function()
     end
 end)
 
-tabs.Server:CreateButton("Lag Server", function(callback)
-    local plrs = game:GetService("Players")
-    local lplr = plrs.LocalPlayer
-    local teams = game:GetService("Teams")
-        
+tabs.Server:CreateButton("Kill all Zombies", function()
+    if lplr.Team == Teams.Human then
+        local remote = lplr.Backpack:FindFirstChild("InflictTarget", true) or lplr.Character:FindFirstChild("InflictTarget", true)
+
+        for _, v in game.Players:GetPlayers() do
+            if lplr ~= v and v.Character and v.Team ~= lplr.Team and v.Character.PrimaryPart then
+                remote:FireServer(
+                    v.Character.Humanoid,
+                    v.Character.HumanoidRootPart,
+                    9e9,
+                    CFrame.new((lplr.Character.Humanoid.Torso.CFrame * CFrame.new(0, 1.5, 0)).Position, v.Character.Humanoid.RootPart.Position).LookVector,
+                    2,
+                    0,
+                    false
+                )
+            end
+        end
+    else
+        gui:Notify("You need to be Human")
+end)
+
+tabs.Server:CreateButton("Lag Server", function(callback)   
     if lplr.Team == teams.Human then
         local remotes = {}
         
@@ -244,9 +258,6 @@ tabs.Server:CreateButton("Lag Server", function(callback)
 end)
 
 tabs.Server:CreateButton("God Humans", function()
-    local Teams = game:GetService("Teams") 
-    local plrs = game:GetService("Players") 
-    local lplr = plrs.LocalPlayer
     local remote = plrs:FindFirstChild("InflictTarget", true) or workspace:FindFirstChild("InflictTarget", true)
 
     if lplr.Team == Teams.Zombie and remote then
@@ -269,9 +280,6 @@ tabs.Server:CreateButton("God Humans", function()
 end)
 
 tabs.Server:CreateButton("God Zombies", function()
-    local Teams = game:GetService("Teams") 
-    local plrs = game:GetService("Players") 
-    local lplr = plrs.LocalPlayer
     local remote = plrs:FindFirstChild("InflictTarget", true) or workspace:FindFirstChild("InflictTarget", true)
 
     if lplr.Team == Teams.Human and remote then
