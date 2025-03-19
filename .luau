@@ -28,7 +28,7 @@ assert = newcclosure(function(i, msg)
     end
 end)
 
-if not dev then
+--[[if not dev then -- I'll uncomment this when im finished
     local invite = request({
         Url = repo .. "conf/invite"
     }).Body
@@ -47,7 +47,7 @@ if not dev then
             args = {code = invite}
         })
     })
-end
+end]]
 
 for i, v in index do
     if game.CreatorId == v or game.PlaceId == v then
