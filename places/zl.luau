@@ -31,11 +31,11 @@ local getKnife = function()
     return ((res and res.Parent) or nil)
 end
 
-tabs.Player:CreateButton("Walkspeed Bypass", function()
+--[[tabs.Player:CreateButton("Walkspeed Bypass", function()
     for _, c in getconnections(lplr.Character.Humanoid:GetPropertyChangedSignal("WalkSpeed")) do
         c:Disable()
     end
-end)
+end)]]
 
 do
     local blacklistedScripts = {
